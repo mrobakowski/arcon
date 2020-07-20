@@ -34,3 +34,7 @@ sled = { git = "https://github.com/mrobakowski/sled.git", optional = true } # TO
 
 [target.'cfg(target_os = "linux")'.dependencies]
 faster-rs = { version = "0.10", optional = true }
+
+[dev-dependencies]
+ct-python = "0.5.1"
+fastrand = "1.3.3"

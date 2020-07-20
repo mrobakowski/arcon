@@ -145,8 +145,10 @@ name = "arcon_state"
 version = "0.1.1"
 dependencies = [
  "bytes",
+ "ct-python",
  "custom_debug",
  "faster-rs",
+ "fastrand",
  "once_cell",
  "prost 0.6.1 (git+https://github.com/Max-Meldrum/prost.git?branch=derive_generics)",
  "rocksdb",
@@ -770,6 +772,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ct-python"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e3725bed6792a859c7cbef50a87d2425fe93ba7db2909f40f3e346e5a741f8f7"
+dependencies = [
+ "inline-python-macros",
+]
+
+[[package]]
 name = "ctrlc"
 version = "3.1.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1294,6 +1305,18 @@ checksum = "5b88cd59ee5f71fea89a62248fc8f387d44400cefe05ef548466d61ced9029a7"
 dependencies = [
  "autocfg 1.0.0",
  "hashbrown",
+]
+
+[[package]]
+name = "inline-python-macros"
+version = "0.5.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0696b87d17ca2f5fc1f97a19d8c9b4745e5b9a96ac40ba9baa7a4a6909acb7a8"
+dependencies = [
+ "libc",
+ "proc-macro2 1.0.10",
+ "pyo3",
+ "quote 1.0.4",
 ]
 
 [[package]]
@@ -2081,6 +2104,17 @@ dependencies = [
  "num_cpus",
  "once_cell",
  "snafu",
+]
+
+[[package]]
+name = "pyo3"
+version = "0.10.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "80348539d1fa3fde72728c3fe9d750ec92c39e89908a774eda074289578c8d33"
+dependencies = [
+ "libc",
+ "parking_lot",
+ "version_check 0.9.1",
 ]
 
 [[package]]
