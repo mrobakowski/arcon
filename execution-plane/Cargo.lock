@@ -1314,9 +1314,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "0696b87d17ca2f5fc1f97a19d8c9b4745e5b9a96ac40ba9baa7a4a6909acb7a8"
 dependencies = [
  "libc",
- "proc-macro2 1.0.10",
+ "proc-macro2 1.0.19",
  "pyo3",
- "quote 1.0.4",
+ "quote 1.0.7",
 ]
 
 [[package]]
@@ -2114,7 +2114,7 @@ checksum = "80348539d1fa3fde72728c3fe9d750ec92c39e89908a774eda074289578c8d33"
 dependencies = [
  "libc",
  "parking_lot",
- "version_check 0.9.1",
+ "version_check 0.9.2",
 ]
 
 [[package]]

@@ -59,42 +59,54 @@ impl Aggregator for XoringAggregator {
     }
 }
 
+static SESSION_LENGTH: OnceCell<usize> = OnceCell::new();
+static NUM_OPS: OnceCell<usize> = OnceCell::new();
+static NUM_KEYS: OnceCell<usize> = OnceCell::new();
+static KEY_SIZE: OnceCell<usize> = OnceCell::new();
+static VALUE_SIZE: OnceCell<usize> = OnceCell::new();
+
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<_> = env::args().collect();
     let bin_name = args[0].clone();
     let print_usage_and_exit = move || {
-        println!("Usage: {} <bench-num> <backend-name>", bin_name);
+        println!(
+            "Usage: {} <bench-num> <backend-name>\nMore opts through env vars.",
+            bin_name
+        );
         std::process::exit(1)
     };
 
     if args.len() < 3 {
-        print_usage_and_exit();
+        let _ = print_usage_and_exit();
     }
 
     let bench_num: u8 = args[1].parse()?;
     let backend: BackendType = args[2].parse()?;
 
-    SESSION_LENGTH
-        .set(
-            env::var("SESSION_LENGTH")
-                .unwrap_or_else(|_| "10".into())
-                .parse()?,
-        )
-        .map_err(|_| String::from("Session length set previously"))?;
-    NUM_OPS
-        .set(
-            env::var("NUM_OPS")
-                .unwrap_or_else(|_| "1000000".into())
-                .parse()?,
-        )
-        .map_err(|_| String::from("Num ops set previously"))?;
-    NUM_KEYS
-        .set(
-            env::var("NUM_KEYS")
-                .unwrap_or_else(|_| "100".into())
-                .parse()?,
-        )
-        .map_err(|_| String::from("Num keys set previously"))?;
+    macro_rules! from_env {
+        ($var_name:ident, $default:literal) => {
+            $var_name
+                .set(
+                    env::var(stringify!($var_name))
+                        .as_ref()
+                        .map(|v| v.as_ref())
+                        .unwrap_or(stringify!($default))
+                        .parse()?,
+                )
+                .map_err(|_| {
+                    String::from(concat!(
+                        stringify!($var_name),
+                        " once-cell was set previously"
+                    ))
+                })?
+        };
+    }
+
+    from_env!(SESSION_LENGTH, 10);
+    from_env!(NUM_OPS, 1000000);
+    from_env!(NUM_KEYS, 100);
+    from_env!(KEY_SIZE, 8);
+    from_env!(VALUE_SIZE, 32);
 
     fastrand::seed(4); // chosen by fair dice roll
 
@@ -144,9 +156,19 @@ const WORDS: &[&str] = ct_python! {
     print("]")
 };
 
-static SESSION_LENGTH: OnceCell<usize> = OnceCell::new();
-static NUM_OPS: OnceCell<usize> = OnceCell::new();
-static NUM_KEYS: OnceCell<usize> = OnceCell::new();
+fn make_key(integer: usize, key_size: usize) -> Vec<u8> {
+    integer
+        .to_le_bytes()
+        .iter()
+        .copied()
+        .cycle()
+        .take(key_size)
+        .collect()
+}
+
+fn make_value(s: &str, value_size: usize) -> Vec<u8> {
+    s.bytes().cycle().take(value_size).collect()
+}
 
 fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
@@ -155,6 +177,9 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
         let mut state = PerfBundle {
             values: Handle::map("perf-bundle-map-read"),
         };
+
+        let value_size = *VALUE_SIZE.get().unwrap();
+        let key_size = *KEY_SIZE.get().unwrap();
 
         // init
         {
@@ -166,8 +191,9 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
             let mut values = state.values();
 
             for (i, word) in WORDS.iter().enumerate() {
-                let bytes = word.to_string().into_bytes();
-                values.fast_insert(i.to_le_bytes().to_vec(), bytes)?;
+                let value: Vec<_> = make_value(word, value_size);
+                let key: Vec<_> = make_key(i, key_size);
+                values.fast_insert(key, value)?;
             }
         }
         // init done
@@ -175,7 +201,7 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
         measure(backend, |session| {
             let mut state = state.activate(session);
             let values = state.values();
-            let key = fastrand::usize(..WORDS.len()).to_le_bytes().to_vec();
+            let key: Vec<_> = make_key(fastrand::usize(..WORDS.len()), key_size);
             let _read_value = values.get(&key)?;
             Ok(())
         })?
@@ -200,13 +226,17 @@ fn append_write(backend: BackendType) -> Result<(), Box<dyn Error>> {
         }
         // init done
 
+        let value_size = *VALUE_SIZE.get().unwrap();
+        let key_size = *KEY_SIZE.get().unwrap();
+
         let mut key_idx = 0usize;
         measure(backend, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let word_idx = fastrand::usize(..WORDS.len());
-            let key = key_idx.to_le_bytes().to_vec();
-            values.fast_insert(key, WORDS[word_idx].to_string().into_bytes())?;
+            let key = make_key(key_idx, key_size);
+            let value: Vec<_> = make_value(WORDS[word_idx], value_size);
+            values.fast_insert(key, value)?;
             key_idx += 1;
             Ok(())
         })?
@@ -232,14 +262,17 @@ fn overwrite(backend: BackendType) -> Result<(), Box<dyn Error>> {
         // init done
 
         let num_keys = *NUM_KEYS.get().unwrap();
+        let value_size = *VALUE_SIZE.get().unwrap();
+        let key_size = *KEY_SIZE.get().unwrap();
 
         let mut key_idx = 0usize;
         measure(backend, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let word_idx = fastrand::usize(..WORDS.len());
-            let key = key_idx.to_le_bytes().to_vec();
-            values.fast_insert(key, WORDS[word_idx].to_string().into_bytes())?;
+            let key = make_key(key_idx, key_size);
+            let value = make_value(WORDS[word_idx], value_size);
+            values.fast_insert(key, value)?;
             key_idx += 1;
             // reset the key idx every so often to overwrite the old values
             key_idx %= num_keys;
@@ -268,18 +301,20 @@ fn naive_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
         // init done
 
         let num_keys = *NUM_KEYS.get().unwrap();
+        let value_size = *VALUE_SIZE.get().unwrap();
+        let key_size = *KEY_SIZE.get().unwrap();
 
         let mut key_idx = 0usize;
         measure(backend, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let word_idx = fastrand::usize(..WORDS.len());
-            let key = key_idx.to_le_bytes().to_vec();
+            let key = make_key(key_idx, key_size);
 
             // read
             let mut value = values.get(&key)?.unwrap_or(vec![]);
             // modify
-            let random_word = WORDS[word_idx].to_string().into_bytes();
+            let random_word = make_value(WORDS[word_idx], value_size);
             if value.len() < random_word.len() {
                 value.resize(random_word.len(), 0);
             }
@@ -315,11 +350,13 @@ fn specialized_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
         }
         // init done
 
+        let value_size = *VALUE_SIZE.get().unwrap();
+
         measure(backend, |session| {
             let mut state = state.activate(session);
             let mut value = state.value();
             let word_idx = fastrand::usize(..WORDS.len());
-            let random_word = WORDS[word_idx].to_string().into_bytes();
+            let random_word = make_value(WORDS[word_idx], value_size);
 
             value.aggregate(random_word)?;
 
