@@ -32,3 +32,13 @@ for backend in InMemory Rocks Sled Faster; do
     done
   done
 done
+
+exit 0
+
+export KEY_SIZE=512
+export VALUE_SIZE=2048
+export NUM_OPS=1000000
+export NUM_KEYS=100
+export SESSION_LENGTH=10
+cargo flamegraph --example perf_experiment --open --features=rocks,sled,faster -- 5 Faster
+

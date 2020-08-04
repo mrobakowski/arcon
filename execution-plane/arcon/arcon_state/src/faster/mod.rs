@@ -298,8 +298,11 @@ impl FasterRmw for FasterVecOps {
 // HACK: we box the closure and serialize a raw pointer to it
 #[derive(Clone, Serialize, Deserialize)]
 enum FasterAgg {
-    Value(Vec<u8>),
-    Modify(Vec<u8>, [u8; std::mem::size_of::<&AggregatorFn>()]),
+    Value(#[serde(with = "serde_bytes")] Vec<u8>),
+    Modify(
+        #[serde(with = "serde_bytes")] Vec<u8>,
+        [u8; std::mem::size_of::<&AggregatorFn>()],
+    ),
     // ideally this'd be something like Error(Box<dyn std::error::Error>), but it has to be
     // serializable, so we'll just save the error description here :(
     Error(String),
