@@ -256,9 +256,9 @@ impl Faster {
 #[derive(Clone, Debug, Serialize, Deserialize)]
 enum FasterVecOps {
     Value(Vec<Vec<u8>>),
-    Push(Vec<u8>),
-    PushIfAbsent(Vec<u8>),
-    Remove(Vec<u8>),
+    Push(#[serde(with = "serde_bytes")] Vec<u8>),
+    PushIfAbsent(#[serde(with = "serde_bytes")] Vec<u8>),
+    Remove(#[serde(with = "serde_bytes")] Vec<u8>),
     RemoveIdx(usize),
 }
 
