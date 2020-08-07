@@ -7,6 +7,7 @@ use crate::{
 use custom_debug::CustomDebug;
 use faster_rs::{status, FasterKv, FasterKvBuilder, FasterRmw};
 use serde::{Deserialize, Serialize};
+use serde_bytes::ByteBuf;
 use std::{
     cell::Cell,
     collections::HashMap,
@@ -86,7 +87,9 @@ fn copy_checkpoint(
     Ok(())
 }
 
-// NOTE: weird types (&Vec<u8>, which should be &[u8]) are due to the design of the faster-rs lib
+// NOTE: weird types (&ByteBuf, which should be &Bytes) are due to the design of the faster-rs lib
+// NOTE: ... and we're using ByteBufs and Bytes instead of std types so serde doesn't kill performance
+//       see serde-bytes crate
 impl Faster {
     #[inline(always)]
     fn next_serial_number(&self) -> u64 {
@@ -95,22 +98,22 @@ impl Faster {
         res
     }
 
-    fn get(&self, key: &Vec<u8>) -> Result<Option<Vec<u8>>> {
+    fn get(&self, key: &ByteBuf) -> Result<Option<Vec<u8>>> {
         // TODO: make the return of `read` more rusty
         let (status, receiver) = self.db.read(key, self.next_serial_number());
         match status {
             status::NOT_FOUND => Ok(None),
             status::OK | status::PENDING => {
-                let val = receiver
+                let val: ByteBuf = receiver
                     .recv_timeout(Duration::from_secs(2)) // TODO: make that customizable
                     .context(FasterReceiveTimeout)?;
-                Ok(Some(val))
+                Ok(Some(val.into_vec()))
             }
             _ => FasterUnexpectedStatus { status }.fail(),
         }
     }
 
-    fn get_vec(&self, key: &Vec<u8>) -> Result<Option<Vec<Vec<u8>>>> {
+    fn get_vec(&self, key: &ByteBuf) -> Result<Option<Vec<Vec<u8>>>> {
         let (status, receiver) = self.db.read(key, self.next_serial_number());
         match status {
             status::NOT_FOUND => Ok(None),
@@ -121,8 +124,8 @@ impl Faster {
 
                 use FasterVecOps::*;
                 let val = match vec_ops {
-                    Value(v) => v,
-                    Push(single) | PushIfAbsent(single) => vec![single],
+                    Value(v) => v.into_iter().map(ByteBuf::into_vec).collect(),
+                    Push(single) | PushIfAbsent(single) => vec![single.into_vec()],
                     _ => panic!("invalid faster vec ops value"), // this is always a bug
                 };
 
@@ -132,7 +135,7 @@ impl Faster {
         }
     }
 
-    fn put(&mut self, key: &Vec<u8>, value: &Vec<u8>) -> Result<()> {
+    fn put(&mut self, key: &ByteBuf, value: &ByteBuf) -> Result<()> {
         // TODO: make the return of `upsert` more rusty
         let status = self.db.upsert(key, value, self.next_serial_number());
         match status {
@@ -141,7 +144,7 @@ impl Faster {
         }
     }
 
-    fn remove(&mut self, key: &Vec<u8>) -> Result<()> {
+    fn remove(&mut self, key: &ByteBuf) -> Result<()> {
         let status = self.db.delete(key, self.next_serial_number());
         match status {
             status::OK | status::PENDING | status::NOT_FOUND => Ok(()),
@@ -150,7 +153,7 @@ impl Faster {
     }
 
     #[cfg(feature = "slower_faster")]
-    fn vec_remove(&mut self, key: &Vec<u8>, to_remove: Vec<u8>) -> Result<()> {
+    fn vec_remove(&mut self, key: &ByteBuf, to_remove: ByteBuf) -> Result<()> {
         let status = self.db.rmw(
             key,
             &FasterVecOps::Remove(to_remove),
@@ -163,7 +166,7 @@ impl Faster {
         }
     }
 
-    fn vec_push(&mut self, key: &Vec<u8>, to_push: Vec<u8>) -> Result<()> {
+    fn vec_push(&mut self, key: &ByteBuf, to_push: ByteBuf) -> Result<()> {
         let status = self
             .db
             .rmw(key, &FasterVecOps::Push(to_push), self.next_serial_number());
@@ -174,7 +177,7 @@ impl Faster {
         }
     }
 
-    fn vec_push_all(&mut self, key: &Vec<u8>, to_push: Vec<Vec<u8>>) -> Result<()> {
+    fn vec_push_all(&mut self, key: &ByteBuf, to_push: Vec<ByteBuf>) -> Result<()> {
         let status = self.db.rmw(
             key,
             &FasterVecOps::Value(to_push),
@@ -188,7 +191,7 @@ impl Faster {
     }
 
     #[cfg(feature = "slower_faster")]
-    fn vec_push_if_absent(&mut self, key: &Vec<u8>, to_push: Vec<u8>) -> Result<()> {
+    fn vec_push_if_absent(&mut self, key: &ByteBuf, to_push: ByteBuf) -> Result<()> {
         let status = self.db.rmw(
             key,
             &FasterVecOps::PushIfAbsent(to_push),
@@ -201,7 +204,7 @@ impl Faster {
         }
     }
 
-    fn vec_set(&mut self, key: &Vec<u8>, value: Vec<Vec<u8>>) -> Result<()> {
+    fn vec_set(&mut self, key: &ByteBuf, value: Vec<ByteBuf>) -> Result<()> {
         let status = self
             .db
             .upsert(key, &FasterVecOps::Value(value), self.next_serial_number());
@@ -211,7 +214,7 @@ impl Faster {
         }
     }
 
-    fn aggregate(&mut self, key: &Vec<u8>, new: Vec<u8>, aggregate_id: &str) -> Result<()> {
+    fn aggregate(&mut self, key: &ByteBuf, new: ByteBuf, aggregate_id: &str) -> Result<()> {
         let fun = self
             .aggregate_fns
             .get(aggregate_id)
@@ -231,7 +234,7 @@ impl Faster {
         }
     }
 
-    fn get_agg(&self, key: &Vec<u8>) -> Result<Option<Vec<u8>>> {
+    fn get_agg(&self, key: &ByteBuf) -> Result<Option<ByteBuf>> {
         let (status, receiver) = self.db.read(key, self.next_serial_number());
         match status {
             status::NOT_FOUND => Ok(None),
@@ -255,10 +258,10 @@ impl Faster {
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 enum FasterVecOps {
-    Value(Vec<Vec<u8>>),
-    Push(#[serde(with = "serde_bytes")] Vec<u8>),
-    PushIfAbsent(#[serde(with = "serde_bytes")] Vec<u8>),
-    Remove(#[serde(with = "serde_bytes")] Vec<u8>),
+    Value(Vec<ByteBuf>),
+    Push(ByteBuf),
+    PushIfAbsent(ByteBuf),
+    Remove(ByteBuf),
     RemoveIdx(usize),
 }
 
@@ -298,11 +301,8 @@ impl FasterRmw for FasterVecOps {
 // HACK: we box the closure and serialize a raw pointer to it
 #[derive(Clone, Serialize, Deserialize)]
 enum FasterAgg {
-    Value(#[serde(with = "serde_bytes")] Vec<u8>),
-    Modify(
-        #[serde(with = "serde_bytes")] Vec<u8>,
-        [u8; std::mem::size_of::<&AggregatorFn>()],
-    ),
+    Value(ByteBuf),
+    Modify(ByteBuf, [u8; std::mem::size_of::<&AggregatorFn>()]),
     // ideally this'd be something like Error(Box<dyn std::error::Error>), but it has to be
     // serializable, so we'll just save the error description here :(
     Error(String),
@@ -319,7 +319,7 @@ impl FasterRmw for FasterAgg {
         if let FasterAgg::Modify(new, fun_fat_ptr_bytes) = modification {
             let f: &AggregatorFn = unsafe { std::mem::transmute(fun_fat_ptr_bytes) };
             match f(old, &new) {
-                Ok(bytes) => FasterAgg::Value(bytes),
+                Ok(bytes) => FasterAgg::Value(ByteBuf::from(bytes)),
                 Err(e) => FasterAgg::Error(e.to_string()),
             }
         } else {
@@ -530,15 +530,23 @@ pub mod tests {
 
         faster_session
             .backend
-            .put(&b"a".to_vec(), &b"1".to_vec())
+            .put(&ByteBuf::from(&b"a"[..]), &ByteBuf::from(&b"1"[..]))
             .unwrap();
         faster_session
             .backend
-            .put(&b"b".to_vec(), &b"2".to_vec())
+            .put(&ByteBuf::from(&b"b"[..]), &ByteBuf::from(&b"2"[..]))
             .unwrap();
 
-        let one = faster_session.backend.get(&b"a".to_vec()).unwrap().unwrap();
-        let two = faster_session.backend.get(&b"b".to_vec()).unwrap().unwrap();
+        let one = faster_session
+            .backend
+            .get(&ByteBuf::from(&b"a"[..]))
+            .unwrap()
+            .unwrap();
+        let two = faster_session
+            .backend
+            .get(&ByteBuf::from(&b"b"[..]))
+            .unwrap()
+            .unwrap();
 
         assert_eq!(&one, b"1");
         assert_eq!(&two, b"2");
@@ -558,22 +566,25 @@ pub mod tests {
 
         let one = restored_session
             .backend
-            .get(&b"a".to_vec())
+            .get(&ByteBuf::from(&b"a"[..]))
             .unwrap()
             .unwrap();
         let two = restored_session
             .backend
-            .get(&b"b".to_vec())
+            .get(&ByteBuf::from(&b"b"[..]))
             .unwrap()
             .unwrap();
 
         assert_eq!(&one, b"1");
         assert_eq!(&two, b"2");
 
-        restored_session.backend.remove(&b"a".to_vec()).unwrap();
         restored_session
             .backend
-            .put(&b"c".to_vec(), &b"3".to_vec())
+            .remove(&ByteBuf::from(&b"a"[..]))
+            .unwrap();
+        restored_session
+            .backend
+            .put(&ByteBuf::from(&b"c"[..]), &ByteBuf::from(&b"3"[..]))
             .unwrap();
 
         let chkp2_dir = tempfile::TempDir::new().unwrap();
@@ -585,15 +596,18 @@ pub mod tests {
         let restored2 = Faster::restore(restore2_dir.path(), chkp2_dir.path()).unwrap();
         let restored2_session = restored2.session();
 
-        let one = restored2_session.backend.get(&b"a".to_vec()).unwrap();
+        let one = restored2_session
+            .backend
+            .get(&ByteBuf::from(&b"a"[..]))
+            .unwrap();
         let two = restored2_session
             .backend
-            .get(&b"b".to_vec())
+            .get(&ByteBuf::from(&b"b"[..]))
             .unwrap()
             .unwrap();
         let three = restored2_session
             .backend
-            .get(&b"c".to_vec())
+            .get(&ByteBuf::from(&b"c"[..]))
             .unwrap()
             .unwrap();
 

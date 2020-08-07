@@ -6,6 +6,7 @@ use crate::{
     error::*, handles::BoxedIteratorOfResult, serialization::protobuf, Faster, Handle, Key, MapOps,
     MapState, Metakey, Value,
 };
+use serde_bytes::ByteBuf;
 
 impl MapOps for Faster {
     #[allow(unused_variables)]
@@ -20,11 +21,12 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
             let keys = if let Some(k) = keys { k } else { return Ok(()) };
             self.remove(&prefix)?;
             for key in keys {
+                let key = ByteBuf::from(key);
                 self.remove(&key)?;
             }
             Ok(())
@@ -36,7 +38,7 @@ impl MapOps for Faster {
         handle: &Handle<MapState<K, V>, IK, N>,
         key: &K,
     ) -> Result<Option<V>> {
-        let key = handle.serialize_id_metakeys_and_key(key)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(key)?);
         if let Some(serialized) = self.get(&key)? {
             let value = protobuf::deserialize(&serialized)?;
             Ok(Some(value))
@@ -51,12 +53,12 @@ impl MapOps for Faster {
         key: K,
         value: V,
     ) -> Result<()> {
-        let key = handle.serialize_id_metakeys_and_key(&key)?;
-        let serialized = protobuf::serialize(&value)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(&key)?);
+        let serialized = ByteBuf::from(protobuf::serialize(&value)?);
         self.put(&key, &serialized)?;
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             self.vec_push_if_absent(&prefix, key)?;
         }
 
@@ -69,7 +71,7 @@ impl MapOps for Faster {
         key: K,
         value: V,
     ) -> Result<Option<V>> {
-        let key = handle.serialize_id_metakeys_and_key(&key)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(&key)?);
 
         let old = if let Some(slice) = self.get(&key)? {
             Some(protobuf::deserialize(&*slice)?)
@@ -77,12 +79,12 @@ impl MapOps for Faster {
             None
         };
 
-        let serialized = protobuf::serialize(&value)?;
+        let serialized = ByteBuf::from(protobuf::serialize(&value)?);
         self.put(&key, &serialized)?;
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             self.vec_push_if_absent(&prefix, key)?;
         }
 
@@ -95,12 +97,12 @@ impl MapOps for Faster {
         key_value_pairs: impl IntoIterator<Item = (K, V)>,
     ) -> Result<()> {
         for (user_key, value) in key_value_pairs {
-            let key = handle.serialize_id_metakeys_and_key(&user_key)?;
-            let serialized = protobuf::serialize(&value)?;
+            let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(&user_key)?);
+            let serialized = ByteBuf::from(protobuf::serialize(&value)?);
             self.put(&key, &serialized)?;
             #[cfg(feature = "slower_faster")]
             {
-                let prefix = handle.serialize_id_and_metakeys()?;
+                let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
                 self.vec_push_if_absent(&prefix, key)?;
             }
         }
@@ -113,7 +115,7 @@ impl MapOps for Faster {
         handle: &Handle<MapState<K, V>, IK, N>,
         key: &K,
     ) -> Result<Option<V>> {
-        let key = handle.serialize_id_metakeys_and_key(key)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(key)?);
 
         let old = if let Some(slice) = self.get(&key)? {
             Some(protobuf::deserialize(&*slice)?)
@@ -124,7 +126,7 @@ impl MapOps for Faster {
         self.remove(&key)?;
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             self.vec_remove(&prefix, key)?;
         }
 
@@ -136,11 +138,11 @@ impl MapOps for Faster {
         handle: &Handle<MapState<K, V>, IK, N>,
         key: &K,
     ) -> Result<()> {
-        let key = handle.serialize_id_metakeys_and_key(key)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(key)?);
         self.remove(&key)?;
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             self.vec_remove(&prefix, key)?;
         }
 
@@ -152,7 +154,7 @@ impl MapOps for Faster {
         handle: &Handle<MapState<K, V>, IK, N>,
         key: &K,
     ) -> Result<bool> {
-        let key = handle.serialize_id_metakeys_and_key(key)?;
+        let key = ByteBuf::from(handle.serialize_id_metakeys_and_key(key)?);
 
         Ok(self.get(&key)?.is_some())
     }
@@ -169,10 +171,11 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
 
             let iter = keys.into_iter().flatten().map(move |serialized_key| {
+                let serialized_key = ByteBuf::from(serialized_key);
                 let serialized_value = self
                     .get(&serialized_key)?
                     .expect("Value not found. Modified during iteration!?");
@@ -202,7 +205,7 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
 
             let iter = keys.into_iter().flatten().map(move |serialized_key| {
@@ -230,10 +233,11 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
 
             let iter = keys.into_iter().flatten().map(move |serialized_key| {
+                let serialized_key = ByteBuf::from(serialized_key);
                 let serialized_value = self
                     .get(&serialized_key)?
                     .expect("Value not found. Modified during iteration!?");
@@ -258,7 +262,7 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
             Ok(keys.map(|keys| keys.len()).unwrap_or(0))
         }
@@ -276,7 +280,7 @@ impl MapOps for Faster {
 
         #[cfg(feature = "slower_faster")]
         {
-            let prefix = handle.serialize_id_and_metakeys()?;
+            let prefix = ByteBuf::from(handle.serialize_id_and_metakeys()?);
             let keys = self.get_vec(&prefix)?;
             Ok(keys.map(|keys| keys.is_empty()).unwrap_or(true))
         }

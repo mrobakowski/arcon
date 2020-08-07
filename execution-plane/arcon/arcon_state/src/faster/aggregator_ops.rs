@@ -4,6 +4,7 @@ use crate::{
     error::*, faster::AggregatorFn, serialization::protobuf, Aggregator, AggregatorOps,
     AggregatorState, Faster, Handle, Metakey,
 };
+use serde_bytes::ByteBuf;
 
 pub(crate) const ACCUMULATOR_MARKER: u8 = 0xAC;
 pub(crate) const VALUE_MARKER: u8 = 0x00;
@@ -13,7 +14,7 @@ impl AggregatorOps for Faster {
         &mut self,
         handle: &Handle<AggregatorState<A>, IK, N>,
     ) -> Result<()> {
-        let key = handle.serialize_id_and_metakeys()?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
         self.remove(&key)?;
         Ok(())
     }
@@ -22,7 +23,7 @@ impl AggregatorOps for Faster {
         &self,
         handle: &Handle<AggregatorState<A>, IK, N>,
     ) -> Result<<A as Aggregator>::Result> {
-        let key = handle.serialize_id_and_metakeys()?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
 
         if let Some(serialized) = self.get_agg(&key)? {
             assert_eq!(serialized[0], ACCUMULATOR_MARKER);
@@ -44,14 +45,14 @@ impl AggregatorOps for Faster {
         handle: &Handle<AggregatorState<A>, IK, N>,
         value: <A as Aggregator>::Input,
     ) -> Result<()> {
-        let key = handle.serialize_id_and_metakeys()?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
         let mut serialized = Vec::with_capacity(1 + protobuf::size_hint(&value).unwrap_or(0));
         serialized.push(VALUE_MARKER);
         protobuf::serialize_into(&mut serialized, &value)?;
 
         // See the make_aggregate_fn function in this module. Its result is set as the
         // merging operator for this state.
-        self.aggregate(&key, serialized, handle.id)
+        self.aggregate(&key, ByteBuf::from(serialized), handle.id)
     }
 }
 

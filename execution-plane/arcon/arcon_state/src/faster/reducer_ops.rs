@@ -4,13 +4,14 @@ use crate::{
     error::*, faster::AggregatorFn, serialization::protobuf, Faster, Handle, Metakey, Reducer,
     ReducerOps, ReducerState, Value,
 };
+use serde_bytes::ByteBuf;
 
 impl ReducerOps for Faster {
     fn reducer_clear<T: Value, F: Reducer<T>, IK: Metakey, N: Metakey>(
         &mut self,
         handle: &Handle<ReducerState<T, F>, IK, N>,
     ) -> Result<()> {
-        let key = handle.serialize_id_and_metakeys()?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
         self.remove(&key)?;
         Ok(())
     }
@@ -19,7 +20,7 @@ impl ReducerOps for Faster {
         &self,
         handle: &Handle<ReducerState<T, F>, IK, N>,
     ) -> Result<Option<T>> {
-        let key = handle.serialize_id_and_metakeys()?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
         if let Some(storage) = self.get_agg(&key)? {
             let value = protobuf::deserialize(&*storage)?;
             Ok(Some(value))
@@ -33,8 +34,8 @@ impl ReducerOps for Faster {
         handle: &Handle<ReducerState<T, F>, IK, N>,
         value: T,
     ) -> Result<()> {
-        let key = handle.serialize_id_and_metakeys()?;
-        let serialized = protobuf::serialize(&value)?;
+        let key = ByteBuf::from(handle.serialize_id_and_metakeys()?);
+        let serialized = ByteBuf::from(protobuf::serialize(&value)?);
 
         self.aggregate(&key, serialized, handle.id)
     }
