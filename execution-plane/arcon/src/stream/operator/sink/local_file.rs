@@ -92,7 +92,7 @@ mod tests {
                 vec![node_id],
                 ChannelStrategy::Mute,
                 LocalFileSink::new(&file_path),
-                InMemory::create("test".as_ref()).unwrap(),
+                InMemory::create("test".as_ref(), &Default::default()).unwrap(),
                 timer::none(),
             )
         });

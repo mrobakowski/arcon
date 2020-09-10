@@ -40,11 +40,18 @@ impl<T> Key for T where T: prost::Message + Default + 'static {}
 pub trait Metakey: FixedBytes + Copy + Clone + Send + Sync + 'static {}
 impl<T> Metakey for T where T: FixedBytes + Copy + Clone + Send + Sync + 'static {}
 
+// TODO: name?
+#[derive(Debug, Default)]
+pub struct StorageConfig {
+    pub mem_size_hint: Option<u64>,
+}
+
 #[derive(Debug, Default)]
 pub struct Config {
     pub live_state_base_path: PathBuf,
     pub checkpoints_base_path: PathBuf,
     pub backend_ids: Vec<String>,
+    pub storage_config: StorageConfig,
 }
 
 pub trait Backend:
@@ -131,16 +138,20 @@ pub trait Backend:
                     epoch = epoch
                 ));
 
-                Self::restore(&state_path, &latest_checkpoint_path)
+                Self::restore(&state_path, &latest_checkpoint_path, &config.storage_config)
             }
-            None => Self::create(&state_path),
+            None => Self::create(&state_path, &config.storage_config),
         }
     }
 
-    fn create(live_path: &Path) -> Result<BackendContainer<Self>>
+    fn create(live_path: &Path, storage_config: &StorageConfig) -> Result<BackendContainer<Self>>
     where
         Self: Sized;
-    fn restore(live_path: &Path, checkpoint_path: &Path) -> Result<BackendContainer<Self>>
+    fn restore(
+        live_path: &Path,
+        checkpoint_path: &Path,
+        storage_config: &StorageConfig,
+    ) -> Result<BackendContainer<Self>>
     where
         Self: Sized;
 

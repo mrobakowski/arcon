@@ -139,7 +139,7 @@ mod tests {
                 vec![1.into()],
                 channel_strategy,
                 FlatMap::new(&flatmap_fn),
-                InMemory::create("test".as_ref()).unwrap(),
+                InMemory::create("test".as_ref(), &Default::default()).unwrap(),
                 timer::none(),
             )
         });
@@ -208,7 +208,7 @@ mod tests {
                     },
                     &flatmap_fn,
                 ),
-                InMemory::create("test".as_ref()).unwrap(),
+                InMemory::create("test".as_ref(), &Default::default()).unwrap(),
                 timer::none(),
             )
         });

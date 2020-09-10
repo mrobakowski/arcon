@@ -59,9 +59,9 @@ fn backend<SB: state::Backend>(
                 epoch = epoch
             ));
 
-            SB::restore(&running_dir, &checkpoint_path).unwrap()
+            SB::restore(&running_dir, &checkpoint_path, &Default::default()).unwrap()
         }
-        None => SB::create(&running_dir).unwrap(),
+        None => SB::create(&running_dir, &Default::default()).unwrap(),
     }
 }
 

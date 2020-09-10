@@ -231,7 +231,7 @@ macro_rules! cfg_if_faster {
 /// # use std::any::Any;
 /// let runtime_type = BackendType::InMemory;
 /// let boxed: Box<dyn Any> = with_backend_type!(runtime_type,
-///     |SB| Box::new(SB::create("test_dir".as_ref()).unwrap()) as Box<dyn Any>
+///     |SB| Box::new(SB::create("test_dir".as_ref(), &Default::default()).unwrap()) as Box<dyn Any>
 /// );
 /// ```
 #[macro_export]

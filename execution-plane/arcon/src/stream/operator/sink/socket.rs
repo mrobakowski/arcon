@@ -145,7 +145,7 @@ mod tests {
                         vec![1.into()],
                         ChannelStrategy::Mute,
                         SocketSink::udp(addr),
-                        InMemory::create("test".as_ref()).unwrap(),
+                        InMemory::create("test".as_ref(), &Default::default()).unwrap(),
                         timer::none(),
                     )
                 });

@@ -59,7 +59,7 @@ fn normalise_pipeline_test() {
             vec![3.into()],
             ChannelStrategy::Mute,
             LocalFileSink::new(&sink_path),
-            InMemory::create("test5".as_ref()).unwrap(),
+            InMemory::create("test5".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         )
     });
@@ -88,7 +88,7 @@ fn normalise_pipeline_test() {
             vec![2.into()],
             channel_strategy,
             Map::new(&map_fn),
-            InMemory::create("test4".as_ref()).unwrap(),
+            InMemory::create("test4".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         )
     });
@@ -108,7 +108,7 @@ fn normalise_pipeline_test() {
         NormaliseElements { data }
     }
 
-    let state_backend_2 = InMemory::create("test2".as_ref()).unwrap();
+    let state_backend_2 = InMemory::create("test2".as_ref(), &Default::default()).unwrap();
 
     let window = AppenderWindow::new(&window_fn);
 
@@ -159,7 +159,7 @@ fn normalise_pipeline_test() {
         Some(&timestamp_extractor),
         channel_strategy,
         Map::new(&source_map),
-        InMemory::create("test".as_ref()).unwrap(),
+        InMemory::create("test".as_ref(), &Default::default()).unwrap(),
         timer::none(),
     );
 

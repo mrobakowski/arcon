@@ -90,12 +90,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                         .unwrap_or(stringify!($default))
                         .parse()?,
                 )
-                .map_err(|_| {
-                    String::from(concat!(
-                        stringify!($var_name),
-                        " once-cell was set previously"
-                    ))
-                })?
+                .map_err(|_| concat!(stringify!($var_name), " once-cell was set previously"))?
         };
     }
 
@@ -105,7 +100,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     from_env!(KEY_SIZE, 8);
     from_env!(VALUE_SIZE, 32);
 
-    fastrand::seed(4); // chosen by fair dice roll
+    let rng = fastrand::Rng::new();
+    rng.seed(4); // chosen by fair dice roll
 
     eprintln!("Running bench #{} with {}", bench_num, backend);
     // print the first part of the csv line (the settings)
@@ -121,11 +117,11 @@ fn main() -> Result<(), Box<dyn Error>> {
     );
 
     match bench_num {
-        1 => random_read(backend),
-        2 => append_write(backend),
-        3 => overwrite(backend),
-        4 => naive_rmw(backend),
-        5 => specialized_rmw(backend),
+        1 => random_read(backend, rng),
+        2 => append_write(backend, rng),
+        3 => overwrite(backend, rng),
+        4 => naive_rmw(backend, rng),
+        5 => specialized_rmw(backend, rng),
         x => {
             println!("unknown bench num: {}", x);
             println!(
@@ -151,16 +147,18 @@ fn make_key(i: usize, key_size: usize) -> Vec<u8> {
         .collect()
 }
 
-fn make_value(value_size: usize) -> Vec<u8> {
-    iter::from_fn(|| Some(fastrand::u8(..)))
-        .take(value_size)
-        .collect()
+fn make_value(value_size: usize, rng: &fastrand::Rng) -> Vec<u8> {
+    iter::repeat_with(|| rng.u8(..)).take(value_size).collect()
 }
 
-fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
+fn storage_config() -> StorageConfig {
+    Default::default()
+}
+
+fn random_read(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
     with_backend_type!(backend, |B| {
-        let backend = B::create(dir.as_ref())?;
+        let backend = B::create(dir.as_ref(), &storage_config())?;
         let mut state = PerfBundle {
             values: Handle::map("perf-bundle-map-read"),
         };
@@ -180,7 +178,7 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
             let mut values = state.values();
 
             for i in 0..num_entries {
-                let value: Vec<_> = make_value(value_size);
+                let value: Vec<_> = make_value(value_size, &rng);
                 let key: Vec<_> = make_key(i, key_size);
                 values.fast_insert(key, value)?;
             }
@@ -190,7 +188,7 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
         measure(backend, |session| {
             let mut state = state.activate(session);
             let values = state.values();
-            let key: Vec<_> = make_key(fastrand::usize(..num_entries), key_size);
+            let key: Vec<_> = make_key(rng.usize(..num_entries), key_size);
             let _read_value = values.get(&key)?;
             Ok(())
         })?
@@ -199,10 +197,10 @@ fn random_read(backend: BackendType) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn append_write(backend: BackendType) -> Result<(), Box<dyn Error>> {
+fn append_write(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
     with_backend_type!(backend, |B| {
-        let backend = B::create(dir.as_ref())?;
+        let backend = B::create(dir.as_ref(), &storage_config())?;
         let mut state = PerfBundle {
             values: Handle::map("perf-bundle-map-append"),
         };
@@ -223,7 +221,7 @@ fn append_write(backend: BackendType) -> Result<(), Box<dyn Error>> {
             let mut state = state.activate(session);
             let mut values = state.values();
             let key = make_key(key_idx, key_size);
-            let value: Vec<_> = make_value(value_size);
+            let value: Vec<_> = make_value(value_size, &rng);
             values.fast_insert(key, value)?;
             key_idx += 1;
             Ok(())
@@ -233,10 +231,10 @@ fn append_write(backend: BackendType) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn overwrite(backend: BackendType) -> Result<(), Box<dyn Error>> {
+fn overwrite(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
     with_backend_type!(backend, |B| {
-        let backend = B::create(dir.as_ref())?;
+        let backend = B::create(dir.as_ref(), &storage_config())?;
         let mut state = PerfBundle {
             values: Handle::map("perf-bundle-map-append"),
         };
@@ -258,7 +256,7 @@ fn overwrite(backend: BackendType) -> Result<(), Box<dyn Error>> {
             let mut state = state.activate(session);
             let mut values = state.values();
             let key = make_key(key_idx, key_size);
-            let value = make_value(value_size);
+            let value = make_value(value_size, &rng);
             values.fast_insert(key, value)?;
             key_idx += 1;
             // reset the key idx every so often to overwrite the old values
@@ -271,10 +269,10 @@ fn overwrite(backend: BackendType) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn naive_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
+fn naive_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
     with_backend_type!(backend, |B| {
-        let backend = B::create(dir.as_ref())?;
+        let backend = B::create(dir.as_ref(), &storage_config())?;
         let mut state = PerfBundle {
             values: Handle::map("perf-bundle-map-append"),
         };
@@ -300,7 +298,7 @@ fn naive_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
             // read
             let mut value = values.get(&key)?.unwrap_or(vec![]);
             // modify
-            let random_bytes = make_value(value_size);
+            let random_bytes = make_value(value_size, &rng);
             if value.len() < random_bytes.len() {
                 value.resize(random_bytes.len(), 0);
             }
@@ -320,10 +318,10 @@ fn naive_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn specialized_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
+fn specialized_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
     let dir = tempdir()?;
     with_backend_type!(backend, |B| {
-        let backend = B::create(dir.as_ref())?;
+        let backend = B::create(dir.as_ref(), &storage_config())?;
         let mut state = PerfAggregatorBundle {
             value: Handle::aggregator("perf-bundle-map-append", XoringAggregator),
         };
@@ -341,7 +339,7 @@ fn specialized_rmw(backend: BackendType) -> Result<(), Box<dyn Error>> {
         measure(backend, |session| {
             let mut state = state.activate(session);
             let mut value = state.value();
-            let random_bytes = make_value(value_size);
+            let random_bytes = make_value(value_size, &rng);
 
             value.aggregate(random_bytes)?;
 

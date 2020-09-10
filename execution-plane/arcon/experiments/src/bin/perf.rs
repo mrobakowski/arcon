@@ -149,6 +149,7 @@ fn exec<SB: state::Backend>(
         live_state_base_path: arcon_config.state_dir.clone(),
         checkpoints_base_path: arcon_config.checkpoint_dir.clone(),
         backend_ids: vec![1.to_string(), 2.to_string()],
+        ..Default::default()
     };
 
     let node = Node::new(
@@ -270,11 +271,7 @@ where
     T: timer::TimerBackend<OP::TimerState>,
 {
     fn get_metrics(&mut self) -> Option<&mut Metrics> {
-        self.source_ctx
-            .get_mut()
-            .state_backend
-            .get_mut()
-            .metrics()
+        self.source_ctx.get_mut().state_backend.get_mut().metrics()
     }
 
     fn backend_name(&self) -> &'static str {
@@ -286,8 +283,9 @@ fn print_state_backend_metrics(
     source: Arc<Component<impl HasMetrics>>,
     map_node: Arc<Component<impl HasMetrics>>,
 ) {
-    let (name, source_metrics) = source.on_definition(|cd| (cd.backend_name().clone(), cd.get_metrics().cloned()));
-    let map_metrics  = map_node.on_definition(|cd| cd.get_metrics().cloned());
+    let (name, source_metrics) =
+        source.on_definition(|cd| (cd.backend_name().clone(), cd.get_metrics().cloned()));
+    let map_metrics = map_node.on_definition(|cd| cd.get_metrics().cloned());
 
     let (source_metrics, map_metrics) = match (source_metrics, map_metrics) {
         (Some(s), Some(m)) => (s, m),

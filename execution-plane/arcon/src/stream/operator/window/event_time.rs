@@ -327,7 +327,7 @@ mod tests {
             u.len() as u64
         }
 
-        let state_backend = InMemory::create("test".as_ref()).unwrap();
+        let state_backend = InMemory::create("test".as_ref(), &Default::default()).unwrap();
 
         let window = AppenderWindow::new(&appender_fn);
         let window_assigner = EventTimeWindowAssigner::new(window, length, slide, late, true);

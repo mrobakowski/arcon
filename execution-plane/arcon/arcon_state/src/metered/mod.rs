@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 use crate::{
     error::*, Aggregator, AggregatorState, Backend, BackendContainer, Config, Handle, Key,
-    MapState, Metakey, Reducer, ReducerState, Value, ValueState, VecState,
+    MapState, Metakey, Reducer, ReducerState, StorageConfig, Value, ValueState, VecState,
 };
 use custom_debug::CustomDebug;
 use once_cell::sync::Lazy;
@@ -196,19 +196,25 @@ impl<B: Backend + 'static> Backend for Metered<B> {
         }))
     }
 
-    fn create(live_path: &Path) -> Result<BackendContainer<Self>>
+    fn create(live_path: &Path, storage_config: &StorageConfig) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
-        Self::new_from_initial_measurement(measure("Backend::create", || B::create(live_path)))
+        Self::new_from_initial_measurement(measure("Backend::create", || {
+            B::create(live_path, storage_config)
+        }))
     }
 
-    fn restore(live_path: &Path, checkpoint_path: &Path) -> Result<BackendContainer<Self>>
+    fn restore(
+        live_path: &Path,
+        checkpoint_path: &Path,
+        storage_config: &StorageConfig,
+    ) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
         Self::new_from_initial_measurement(measure("Backend::restore", || {
-            B::restore(live_path, checkpoint_path)
+            B::restore(live_path, checkpoint_path, storage_config)
         }))
     }
 
@@ -337,7 +343,7 @@ mod tests {
     use std::path::PathBuf;
 
     fn backend() -> BackendContainer<Metered<InMemory>> {
-        Metered::<InMemory>::create(&PathBuf::new()).unwrap()
+        Metered::<InMemory>::create(&PathBuf::new(), &Default::default()).unwrap()
     }
 
     common_state_tests!(backend());

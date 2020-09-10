@@ -121,7 +121,7 @@ pub fn q1_node(
             in_channels,
             channel_strategy,
             MapInPlace::new(&map_fn),
-            SB::create("target/map".as_ref()).unwrap(),
+            SB::create("target/map".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         );
 
@@ -152,7 +152,7 @@ fn start_source(
             None, // no timestamp extractor
             channel_strategy,
             FlatMap::new(&bid_filter_map),
-            SB::create("target/src".as_ref()).unwrap(),
+            SB::create("target/src".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         );
 

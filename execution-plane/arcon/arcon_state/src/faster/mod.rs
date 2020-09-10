@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 use crate::{
     error::*, Aggregator, AggregatorState, Backend, BackendContainer, Handle, Key, MapState,
-    Metakey, Reducer, ReducerState, Value, ValueState, VecState,
+    Metakey, Reducer, ReducerState, StorageConfig, Value, ValueState, VecState,
 };
 use custom_debug::CustomDebug;
 use faster_rs::{status, FasterKv, FasterKvBuilder, FasterRmw};
@@ -329,12 +329,22 @@ impl FasterRmw for FasterAgg {
 }
 
 impl Backend for Faster {
-    fn create(live_path: &Path) -> Result<BackendContainer<Self>>
+    fn create(live_path: &Path, storage_config: &StorageConfig) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
+        let (num_hash_table_buckets, log_size) =
+            if let Some(mem_size) = storage_config.mem_size_hint {
+                // the hash table takes num_buckets * 64 bytes of memory
+                // for now let's ignore the size of the hash table and use mem_size
+                // only for the log_size -- it should be way bigger anyway
+                (1 << 15, mem_size)
+            } else {
+                (1 << 15, 1024 * 1024 * 1024)
+            };
+
         // TODO: figure the params out
-        let db = FasterKvBuilder::new(1 << 15, 1024 * 1024 * 1024)
+        let db = FasterKvBuilder::new(num_hash_table_buckets, log_size)
             .with_disk(live_path.to_str().with_context(|| InvalidPath {
                 path: live_path.to_path_buf(),
             })?)
@@ -350,7 +360,11 @@ impl Backend for Faster {
         }))
     }
 
-    fn restore(live_path: &Path, checkpoint_path: &Path) -> Result<BackendContainer<Self>>
+    fn restore(
+        live_path: &Path,
+        checkpoint_path: &Path,
+        storage_config: &StorageConfig,
+    ) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
@@ -364,7 +378,7 @@ impl Backend for Faster {
 
         copy_checkpoint(&token, checkpoint_path, live_path)?;
 
-        let mut res = Faster::create(live_path)?;
+        let mut res = Faster::create(live_path, storage_config)?;
         let restore_result = res.get_mut().db.recover(token.clone(), token)?;
 
         match restore_result.status {
@@ -487,7 +501,7 @@ pub mod tests {
             let mut dir_path = dir.path().to_path_buf();
             dir_path.push("faster");
             fs::create_dir(&dir_path).unwrap();
-            let faster = Faster::create(&dir_path).unwrap();
+            let faster = Faster::create(&dir_path, &Default::default()).unwrap();
             TestDb { faster, dir }
         }
 
@@ -502,7 +516,8 @@ pub mod tests {
             let dir = TempDir::new().unwrap();
             let mut dir_path = dir.path().to_path_buf();
             dir_path.push("faster");
-            let faster = Faster::restore(checkpoint_dir.as_ref(), &dir_path).unwrap();
+            let faster =
+                Faster::restore(checkpoint_dir.as_ref(), &dir_path, &Default::default()).unwrap();
             TestDb { faster, dir }
         }
     }
@@ -525,7 +540,7 @@ pub mod tests {
     fn test_faster_checkpoints() {
         let dir = tempfile::TempDir::new().unwrap();
         let dir = dir.path().to_string_lossy().into_owned();
-        let mut faster = Faster::create(dir.as_ref()).unwrap();
+        let mut faster = Faster::create(dir.as_ref(), &Default::default()).unwrap();
         let mut faster_session = faster.session();
 
         faster_session
@@ -557,7 +572,8 @@ pub mod tests {
         drop(faster_session);
         faster.get_mut().checkpoint(chkp_dir.path()).unwrap();
 
-        let mut restored = Faster::restore(restore_dir.path(), chkp_dir.path()).unwrap();
+        let mut restored =
+            Faster::restore(restore_dir.path(), chkp_dir.path(), &Default::default()).unwrap();
 
         assert!(!faster.get_mut().was_restored());
         assert!(restored.get_mut().was_restored());
@@ -593,7 +609,8 @@ pub mod tests {
         drop(restored_session);
         restored.get_mut().checkpoint(chkp2_dir.path()).unwrap();
 
-        let restored2 = Faster::restore(restore2_dir.path(), chkp2_dir.path()).unwrap();
+        let restored2 =
+            Faster::restore(restore2_dir.path(), chkp2_dir.path(), &Default::default()).unwrap();
         let restored2_session = restored2.session();
 
         let one = restored2_session

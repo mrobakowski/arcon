@@ -270,7 +270,7 @@ pub fn q3_node(
             in_channels,
             channel_strategy,
             FlatMap::stateful(Q3State::new(), &flatmap_fn),
-            SB::create("target/flatmap".as_ref()).unwrap(),
+            SB::create("target/flatmap".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         );
 
@@ -304,7 +304,7 @@ fn start_source(
             None, // no timestamp extractor
             channel_strategy,
             FlatMap::new(&person_or_auction_filter_map),
-            SB::create("target/src".as_ref()).unwrap(),
+            SB::create("target/src".as_ref(), &Default::default()).unwrap(),
             timer::none(),
         );
 

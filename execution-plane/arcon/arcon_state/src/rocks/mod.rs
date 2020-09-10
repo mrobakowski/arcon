@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 use crate::{
     error::*, Aggregator, AggregatorState, Backend, BackendContainer, Handle, Key, MapState,
-    Metakey, Reducer, ReducerState, Value, ValueState, VecState,
+    Metakey, Reducer, ReducerState, StorageConfig, Value, ValueState, VecState,
 };
 use custom_debug::CustomDebug;
 use rocksdb::{
@@ -276,12 +276,16 @@ where
 }
 
 impl Backend for Rocks {
-    fn create(path: &Path) -> Result<BackendContainer<Self>>
+    fn create(path: &Path, storage_config: &StorageConfig) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
         let mut opts = Options::default();
         opts.create_if_missing(true);
+        if let Some(mem_size) = storage_config.mem_size_hint {
+            // memtables across all column families
+            opts.set_db_write_buffer_size(mem_size as usize);
+        }
 
         let path: PathBuf = path.into();
         if !path.exists() {
@@ -326,7 +330,11 @@ impl Backend for Rocks {
         }))
     }
 
-    fn restore(live_path: &Path, checkpoint_path: &Path) -> Result<BackendContainer<Self>>
+    fn restore(
+        live_path: &Path,
+        checkpoint_path: &Path,
+        storage_config: &StorageConfig,
+    ) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
@@ -360,7 +368,7 @@ impl Backend for Rocks {
             fs::copy(&source_path, &target_path)?;
         }
 
-        Rocks::create(live_path).map(|mut r| {
+        Rocks::create(live_path, storage_config).map(|mut r| {
             r.get_mut().restored = true;
             r
         })
@@ -468,7 +476,7 @@ pub mod tests {
             let mut dir_path = dir.path().to_path_buf();
             dir_path.push("rocks");
             fs::create_dir(&dir_path).unwrap();
-            let rocks = Rocks::create(&dir_path).unwrap();
+            let rocks = Rocks::create(&dir_path, &Default::default()).unwrap();
             TestDb { rocks, dir }
         }
 
@@ -483,7 +491,8 @@ pub mod tests {
             let dir = TempDir::new().unwrap();
             let mut dir_path = dir.path().to_path_buf();
             dir_path.push("rocks");
-            let rocks = Rocks::restore(&dir_path, checkpoint_dir.as_ref()).unwrap();
+            let rocks =
+                Rocks::restore(&dir_path, checkpoint_dir.as_ref(), &Default::default()).unwrap();
             TestDb { rocks, dir }
         }
     }
@@ -544,7 +553,7 @@ pub mod tests {
         let mut restore_dir_path = restore_dir.path().to_path_buf();
         restore_dir_path.push("chkp0");
 
-        let mut db = Rocks::create(&dir_path).unwrap();
+        let mut db = Rocks::create(&dir_path, &Default::default()).unwrap();
 
         let key: &[u8] = b"key";
         let initial_value: &[u8] = b"value";
@@ -561,8 +570,12 @@ pub mod tests {
             .put(column_family, key, new_value)
             .expect("second put failed");
 
-        let mut db_from_checkpoint = Rocks::restore(&restore_dir_path, &checkpoints_dir_path)
-            .expect("Could not open checkpointed db");
+        let mut db_from_checkpoint = Rocks::restore(
+            &restore_dir_path,
+            &checkpoints_dir_path,
+            &Default::default(),
+        )
+        .expect("Could not open checkpointed db");
 
         assert_eq!(
             new_value,

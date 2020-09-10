@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: AGPL-3.0-only
 use crate::{
     error::*, Aggregator, AggregatorState, Backend, BackendContainer, Handle, Key, MapState,
-    Metakey, Reducer, ReducerState, Value, ValueState, VecState,
+    Metakey, Reducer, ReducerState, StorageConfig, Value, ValueState, VecState,
 };
-use sled::{open, Batch, Db, IVec, Tree};
+use sled::{Batch, Db, IVec, Tree};
 use std::path::Path;
 #[cfg(feature = "sled_checkpoints")]
 use std::{
@@ -62,11 +62,15 @@ impl Sled {
 }
 
 impl Backend for Sled {
-    fn create(live_path: &Path) -> Result<BackendContainer<Self>>
+    fn create(live_path: &Path, storage_config: &StorageConfig) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
-        let db = open(live_path)?;
+        let mut opts = sled::Config::new().path(live_path);
+        if let Some(mem_size) = storage_config.mem_size_hint {
+            opts = opts.cache_capacity(mem_size)
+        }
+        let db = opts.open()?;
         Ok(BackendContainer::new(Sled {
             db,
             restored: false,
@@ -74,11 +78,19 @@ impl Backend for Sled {
     }
 
     #[allow(unused_variables)]
-    fn restore(live_path: &Path, checkpoint_path: &Path) -> Result<BackendContainer<Self>>
+    fn restore(
+        live_path: &Path,
+        checkpoint_path: &Path,
+        storage_config: &StorageConfig,
+    ) -> Result<BackendContainer<Self>>
     where
         Self: Sized,
     {
-        let db = open(live_path)?;
+        let mut opts = sled::Config::new().path(live_path);
+        if let Some(mem_size) = storage_config.mem_size_hint {
+            opts = opts.cache_capacity(mem_size)
+        }
+        let db = opts.open()?;
         #[allow(unused_assignments, unused_mut)]
         let mut restored = false;
 
@@ -284,7 +296,7 @@ mod tests {
             let mut dir_path = dir.path().to_path_buf();
             dir_path.push("sled");
             fs::create_dir(&dir_path).unwrap();
-            let sled = Sled::create(&dir_path).unwrap();
+            let sled = Sled::create(&dir_path, &Default::default()).unwrap();
             TestDb { sled, dir }
         }
     }
@@ -307,7 +319,7 @@ mod tests {
     #[test]
     fn test_sled_checkpoints() {
         let dir = TempDir::new().unwrap();
-        let mut sled = Sled::create(dir.path()).unwrap();
+        let mut sled = Sled::create(dir.path(), &Default::default()).unwrap();
         let sled = sled.get_mut();
 
         sled.db.insert(b"a", b"1").unwrap();
@@ -322,7 +334,8 @@ mod tests {
 
         sled.checkpoint(chkp_dir.path()).unwrap();
 
-        let mut restored = Sled::restore(restore_dir.path(), chkp_dir.path()).unwrap();
+        let mut restored =
+            Sled::restore(restore_dir.path(), chkp_dir.path(), &Default::default()).unwrap();
         let restored = restored.get_mut();
 
         assert!(!sled.was_restored());

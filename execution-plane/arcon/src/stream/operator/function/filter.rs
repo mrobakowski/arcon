@@ -132,7 +132,7 @@ mod tests {
                 vec![1.into()],
                 channel_strategy,
                 Filter::new(&filter_fn),
-                InMemory::create("test".as_ref()).unwrap(),
+                InMemory::create("test".as_ref(), &Default::default()).unwrap(),
                 timer::none(),
             )
         });
