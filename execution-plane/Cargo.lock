@@ -87,7 +87,6 @@ dependencies = [
  "crossbeam-utils 0.7.2",
  "crossterm 0.17.7",
  "ctrlc",
- "faster-rs",
  "futures",
  "fxhash",
  "hierarchical_hash_wheel_timer",
@@ -1020,8 +1019,7 @@ dependencies = [
 [[package]]
 name = "faster-rs"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "88411c903469deebde138ef0250aba979b279e341395dfbf44358402eae3eab1"
+source = "git+https://github.com/mrobakowski/faster-rs.git#ab33be278ae752ba95e6563949672774174e5919"
 dependencies = [
  "bincode",
  "libc",
@@ -1452,8 +1450,7 @@ checksum = "bd7d4bd64732af4bf3a67f367c27df8520ad7e230c5817b8ff485864d80242b9"
 [[package]]
 name = "libfaster-sys"
 version = "0.10.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "42f731b549279e34524716bd4aeb0dd6d70952f85e155968505d8b9fa797e9eb"
+source = "git+https://github.com/mrobakowski/faster-rs.git#ab33be278ae752ba95e6563949672774174e5919"
 dependencies = [
  "bindgen 0.50.1",
  "cmake",

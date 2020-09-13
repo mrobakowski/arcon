@@ -14,6 +14,7 @@ use std::{
     fs::File,
     io::{Read, Write},
     path::{Path, PathBuf},
+    sync::mpsc::RecvTimeoutError,
     time::Duration,
 };
 
@@ -104,10 +105,21 @@ impl Faster {
         match status {
             status::NOT_FOUND => Ok(None),
             status::OK | status::PENDING => {
-                let val: ByteBuf = receiver
-                    .recv_timeout(Duration::from_secs(2)) // TODO: make that customizable
-                    .context(FasterReceiveTimeout)?;
-                Ok(Some(val.into_vec()))
+                if status == status::PENDING {
+                    self.db.complete_pending(true);
+                }
+
+                let recvd = receiver.recv_timeout(Duration::from_secs(2)); // TODO: make that customizable
+
+                if let Err(RecvTimeoutError::Disconnected) = recvd {
+                    // faster_rs::faster_traits::read_callback ignores errors and disconnects the sender on error
+                    // one of the common errors it ignores is NOT_FOUND, which is also the only one
+                    // that we can tolerate -- let's hope it was that one
+                    Ok(None)
+                } else {
+                    let val: ByteBuf = recvd.context(FasterReceiveTimeout)?;
+                    Ok(Some(val.into_vec()))
+                }
             }
             _ => FasterUnexpectedStatus { status }.fail(),
         }
@@ -118,18 +130,30 @@ impl Faster {
         match status {
             status::NOT_FOUND => Ok(None),
             status::OK | status::PENDING => {
-                let vec_ops: FasterVecOps = receiver
-                    .recv_timeout(Duration::from_secs(2)) // TODO: make that customizable
-                    .context(FasterReceiveTimeout)?;
+                if status == status::PENDING {
+                    self.db.complete_pending(true);
+                }
 
-                use FasterVecOps::*;
-                let val = match vec_ops {
-                    Value(v) => v.into_iter().map(ByteBuf::into_vec).collect(),
-                    Push(single) | PushIfAbsent(single) => vec![single.into_vec()],
-                    _ => panic!("invalid faster vec ops value"), // this is always a bug
-                };
+                let recvd = receiver.recv_timeout(Duration::from_secs(2)); // TODO: make that customizable
 
-                Ok(Some(val))
+                if let Err(RecvTimeoutError::Disconnected) = recvd {
+                    // faster_rs::faster_traits::read_callback ignores errors and disconnects the sender on error
+                    // one of the common errors it ignores is NOT_FOUND, which is also the only one
+                    // that we can tolerate -- let's hope it was that one
+                    eprintln!("Disconnected!");
+                    Ok(None)
+                } else {
+                    let vec_ops: FasterVecOps = recvd.context(FasterReceiveTimeout)?;
+
+                    use FasterVecOps::*;
+                    let val = match vec_ops {
+                        Value(v) => v.into_iter().map(ByteBuf::into_vec).collect(),
+                        Push(single) | PushIfAbsent(single) => vec![single.into_vec()],
+                        _ => panic!("invalid faster vec ops value"), // this is always a bug
+                    };
+
+                    Ok(Some(val))
+                }
             }
             _ => FasterUnexpectedStatus { status }.fail(),
         }
@@ -239,17 +263,29 @@ impl Faster {
         match status {
             status::NOT_FOUND => Ok(None),
             status::OK | status::PENDING => {
-                let agg_ops: FasterAgg = receiver
-                    .recv_timeout(Duration::from_secs(2)) // TODO: make that customizable
-                    .context(FasterReceiveTimeout)?;
+                if status == status::PENDING {
+                    self.db.complete_pending(true);
+                    self.db.refresh();
+                }
+                let recvd = receiver.recv_timeout(Duration::from_secs(2)); // TODO: make that customizable
 
-                let val = match agg_ops {
-                    FasterAgg::Value(v) => v,
-                    FasterAgg::Modify(v, _fn_fat_ptr_bytes) => v,
-                    FasterAgg::Error(message) => return FasterErrorInRmw { message }.fail(),
-                };
+                if let Err(RecvTimeoutError::Disconnected) = recvd {
+                    // faster_rs::faster_traits::read_callback ignores errors and disconnects the sender on error
+                    // one of the common errors it ignores is NOT_FOUND, which is also the only one
+                    // that we can tolerate -- let's hope it was that one
+                    eprintln!("Disconnected!");
+                    Ok(None)
+                } else {
+                    let agg_ops: FasterAgg = recvd.context(FasterReceiveTimeout)?;
 
-                Ok(Some(val))
+                    let val = match agg_ops {
+                        FasterAgg::Value(v) => v,
+                        FasterAgg::Modify(v, _fn_fat_ptr_bytes) => v,
+                        FasterAgg::Error(message) => return FasterErrorInRmw { message }.fail(),
+                    };
+
+                    Ok(Some(val))
+                }
             }
             _ => FasterUnexpectedStatus { status }.fail(),
         }
