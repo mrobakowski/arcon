@@ -4,9 +4,9 @@ cd "${0%/*}" || exit 1
 run="../../target/release/examples/perf_experiment"
 cargo build --example perf_experiment --features=sled,rocks,faster --release
 
-export NUM_OPS=1000000
+export NUM_OPS=5000000
 # used only in a few experiments with limited number of keys
-export NUM_KEYS=100
+export NUM_KEYS=2500000
 
 rm ../../target/experiment_results.csv
 
