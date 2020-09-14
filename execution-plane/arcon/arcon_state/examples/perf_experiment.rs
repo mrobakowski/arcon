@@ -1,6 +1,13 @@
 extern crate arcon_state;
 use arcon_state::*;
-use std::{env, error::Error, iter};
+use std::{
+    env,
+    error::Error,
+    iter,
+    sync::atomic::{AtomicBool, Ordering},
+    thread,
+    time::Duration,
+};
 use tempfile::tempdir_in;
 
 bundle! {
@@ -359,6 +366,23 @@ fn specialized_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<d
     Ok(())
 }
 
+static TIMED_OUT: AtomicBool = AtomicBool::new(true);
+fn reset_timeout() {
+    if !TIMED_OUT.load(Ordering::Relaxed) {
+        panic!("Cannot reset an initialized timeout")
+    }
+    TIMED_OUT.store(false, Ordering::Relaxed);
+
+    thread::spawn(|| {
+        thread::sleep(Duration::from_secs(10 * 60));
+        TIMED_OUT.store(true, Ordering::Relaxed);
+    });
+}
+
+fn check_timeout() -> bool {
+    TIMED_OUT.load(Ordering::Relaxed)
+}
+
 fn measure<B: Backend>(
     backend: BackendContainer<B>,
     mut f: impl FnMut(&mut Session<B>) -> Result<(), Box<dyn Error>>,
@@ -368,10 +392,18 @@ fn measure<B: Backend>(
     let num_ops = *NUM_OPS;
 
     let start = std::time::Instant::now();
+    reset_timeout();
 
     let mut session = backend.session();
+    let mut ops_done = 0usize;
     for i in 0..num_ops {
+        if check_timeout() {
+            eprintln!("Timed out after {} ops!", ops_done);
+            break;
+        }
+
         f(&mut session)?;
+        ops_done += 1;
 
         if i % session_length == 0 {
             drop(session);
@@ -381,7 +413,7 @@ fn measure<B: Backend>(
 
     let elapsed = start.elapsed();
     eprintln!("Done! {:?}", elapsed);
-    println!("{}", elapsed.as_millis());
+    println!("{},{}", elapsed.as_nanos() / (ops_done as u128), ops_done);
 
     Ok(())
 }
