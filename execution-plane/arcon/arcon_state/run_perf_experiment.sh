@@ -13,6 +13,7 @@ rm ../../target/experiment_results_ops.csv
 
 for experiment in 1 2 3 4 5; do
   echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>../../target/experiment_results.csv
+  echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>../../target/experiment_results_ops.csv
   for size_mul in 1 4 16 64; do
     export KEY_SIZE=$((8 * size_mul))
     export VALUE_SIZE=$((32 * size_mul))
