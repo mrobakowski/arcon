@@ -28,6 +28,7 @@ pub struct Rocks {
 enum Inner {
     Initialized(#[debug(skip)] InitializedRocksDb),
     Uninitialized {
+        storage_config: StorageConfig,
         unknown_cfs: HashSet<String>,
         #[debug(skip)]
         known_cfs: HashMap<String, Options>,
@@ -198,6 +199,7 @@ impl Rocks {
             Inner::Uninitialized {
                 unknown_cfs,
                 known_cfs,
+                ..
             } => {
                 if known_cfs.contains_key(cf_name) {
                     return Ok(());
@@ -217,22 +219,27 @@ impl Rocks {
 
     fn initialize(&mut self) -> Result<()> {
         assert!(!self.is_initialized());
-        let options = {
-            let (no_unknown_cfs, known_cfs_ref) = match &mut self.inner {
+        let (options, storage_config) = {
+            let (storage_config, no_unknown_cfs, known_cfs_ref) = match &mut self.inner {
                 Inner::Uninitialized {
+                    storage_config,
                     unknown_cfs,
                     known_cfs,
-                } => (unknown_cfs.is_empty(), known_cfs),
+                } => (storage_config, unknown_cfs.is_empty(), known_cfs),
                 Inner::Initialized { .. } => unreachable!(),
             };
             assert!(no_unknown_cfs);
             let mut known_cfs = HashMap::new();
             mem::swap(known_cfs_ref, &mut known_cfs);
-            known_cfs
+            (known_cfs, storage_config)
         };
 
         let mut whole_db_opts: Options = Default::default();
         whole_db_opts.create_if_missing(true);
+        if let Some(mem_size) = storage_config.mem_size_hint {
+            // memtables across all column families
+            whole_db_opts.set_db_write_buffer_size(mem_size as usize);
+        }
 
         let cfds: Vec<_> = options
             .into_iter()
@@ -305,6 +312,7 @@ impl Backend for Rocks {
 
         let inner = if !column_families.is_empty() {
             Inner::Uninitialized {
+                storage_config: storage_config.clone(),
                 unknown_cfs: column_families,
                 known_cfs: HashMap::from_iter(std::iter::once((
                     "default".to_string(),

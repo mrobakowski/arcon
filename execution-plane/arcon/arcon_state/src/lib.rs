@@ -41,7 +41,7 @@ pub trait Metakey: FixedBytes + Copy + Clone + Send + Sync + 'static {}
 impl<T> Metakey for T where T: FixedBytes + Copy + Clone + Send + Sync + 'static {}
 
 // TODO: name?
-#[derive(Debug, Default)]
+#[derive(Debug, Default, Clone)]
 pub struct StorageConfig {
     pub mem_size_hint: Option<u64>,
 }

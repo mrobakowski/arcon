@@ -27,7 +27,7 @@ for experiment in 1 2 3 4 5; do
         echo -n "," >>../../target/experiment_results.csv
         echo -n "," >>../../target/experiment_results_ops.csv
         echo Warmup...
-        $run $experiment $backend >/dev/null 2>&1
+        pidstat -druh 2 -e $run $experiment $backend >/dev/null 2>&1
         $run $experiment $backend >/dev/null 2>&1
 
         echo "session reset = $sess_len, key size = $KEY_SIZE, value size = $VALUE_SIZE"
