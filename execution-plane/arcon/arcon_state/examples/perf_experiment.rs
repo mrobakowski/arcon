@@ -1,4 +1,5 @@
 extern crate arcon_state;
+
 use arcon_state::*;
 use std::{
     env,
@@ -7,8 +8,11 @@ use std::{
     sync::atomic::{AtomicBool, Ordering},
     thread,
     time::Duration,
+    path::PathBuf,
 };
 use tempfile::tempdir_in;
+use std::io::Write;
+use std::ops::Deref;
 
 bundle! {
     struct PerfBundle {
@@ -24,6 +28,7 @@ bundle! {
 
 #[derive(Debug, Clone)]
 pub struct XoringAggregator;
+
 impl Aggregator for XoringAggregator {
     type Input = Vec<u8>;
     type Accumulator = Vec<u8>;
@@ -88,12 +93,13 @@ env_var!(KEY_SIZE: usize = 8);
 env_var!(VALUE_SIZE: usize = 32);
 // 352 megabytes is the minimum size that FASTER doesn't hang up on
 env_var!(MEM_SIZE_HINT_MB: u64 = 352);
+env_var!(OUT_FILE: PathBuf = "STDOUT");
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<_> = env::args().collect();
     let bin_name = args[0].clone();
     let print_usage_and_exit = move || {
-        println!(
+        eprintln!(
             "Usage: {} <bench-num> <backend-name>\nMore opts through env vars.",
             bin_name
         );
@@ -111,27 +117,33 @@ fn main() -> Result<(), Box<dyn Error>> {
     rng.seed(4); // chosen by fair dice roll
 
     eprintln!("Running bench #{} with {}", bench_num, backend);
+    let mut out: Box<dyn Write> = if OUT_FILE.deref() == &PathBuf::from("STDOUT") {
+        Box::new(std::io::stdout())
+    } else {
+        Box::new(std::fs::File::create(&**OUT_FILE)?)
+    };
+
     // print the first part of the csv line (the settings)
-    print!(
-        "{bench_num},{backend},{session_length},{num_ops},{num_keys},{key_size},{value_size},",
-        bench_num = bench_num,
-        backend = backend,
-        session_length = *SESSION_LENGTH,
-        num_ops = *NUM_OPS,
-        num_keys = *NUM_KEYS,
-        key_size = *KEY_SIZE,
-        value_size = *VALUE_SIZE
-    );
+    write!(out,
+           "{bench_num},{backend},{session_length},{num_ops},{num_keys},{key_size},{value_size},",
+           bench_num = bench_num,
+           backend = backend,
+           session_length = *SESSION_LENGTH,
+           num_ops = *NUM_OPS,
+           num_keys = *NUM_KEYS,
+           key_size = *KEY_SIZE,
+           value_size = *VALUE_SIZE
+    )?;
 
     match bench_num {
-        1 => random_read(backend, rng),
-        2 => append_write(backend, rng),
-        3 => overwrite(backend, rng),
-        4 => naive_rmw(backend, rng),
-        5 => specialized_rmw(backend, rng),
+        1 => random_read(backend, rng, out),
+        2 => append_write(backend, rng, out),
+        3 => overwrite(backend, rng, out),
+        4 => naive_rmw(backend, rng, out),
+        5 => specialized_rmw(backend, rng, out),
         x => {
-            println!("unknown bench num: {}", x);
-            println!(
+            eprintln!("unknown bench num: {}", x);
+            eprintln!(
                 "\
                 1. read random values from map state\n\
                 2. blind append-only writes\n\
@@ -164,7 +176,7 @@ fn storage_config() -> StorageConfig {
     }
 }
 
-fn random_read(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
+fn random_read(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
     let dir = tempdir_in(std::env::current_dir()?)?;
     with_backend_type!(backend, |B| {
         let backend = B::create(dir.as_ref(), &storage_config())?;
@@ -194,7 +206,7 @@ fn random_read(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn E
         }
         // init done
 
-        measure(backend, |session| {
+        measure(backend, out, |session| {
             let mut state = state.activate(session);
             let values = state.values();
             let key: Vec<_> = make_key(rng.usize(0..num_entries), key_size);
@@ -206,7 +218,7 @@ fn random_read(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn E
     Ok(())
 }
 
-fn append_write(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
+fn append_write(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
     let dir = tempdir_in(std::env::current_dir()?)?;
     with_backend_type!(backend, |B| {
         let backend = B::create(dir.as_ref(), &storage_config())?;
@@ -226,7 +238,7 @@ fn append_write(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn 
         let key_size = *KEY_SIZE;
 
         let mut key_idx = 0usize;
-        measure(backend, |session| {
+        measure(backend, out, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let key = make_key(key_idx, key_size);
@@ -240,7 +252,7 @@ fn append_write(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn 
     Ok(())
 }
 
-fn overwrite(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
+fn overwrite(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
     let dir = tempdir_in(std::env::current_dir()?)?;
     with_backend_type!(backend, |B| {
         let backend = B::create(dir.as_ref(), &storage_config())?;
@@ -261,7 +273,7 @@ fn overwrite(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Err
         let key_size = *KEY_SIZE;
 
         let mut key_idx = 0usize;
-        measure(backend, |session| {
+        measure(backend, out, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let key = make_key(key_idx, key_size);
@@ -278,7 +290,7 @@ fn overwrite(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Err
     Ok(())
 }
 
-fn naive_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
+fn naive_rmw(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
     let dir = tempdir_in(std::env::current_dir()?)?;
     with_backend_type!(backend, |B| {
         let backend = B::create(dir.as_ref(), &storage_config())?;
@@ -299,13 +311,13 @@ fn naive_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Err
         let key_size = *KEY_SIZE;
 
         let mut key_idx = 0usize;
-        measure(backend, |session| {
+        measure(backend, out, |session| {
             let mut state = state.activate(session);
             let mut values = state.values();
             let key = make_key(key_idx, key_size);
 
             // read
-            let mut value = values.get(&key)?.unwrap_or(vec![]);
+            let mut value = values.get(&key)?.unwrap_or_default();
             // modify
             let random_bytes = make_value(value_size, &rng);
             if value.len() < random_bytes.len() {
@@ -327,7 +339,7 @@ fn naive_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Err
     Ok(())
 }
 
-fn specialized_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<dyn Error>> {
+fn specialized_rmw(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
     let dir = tempdir_in(std::env::current_dir()?)?;
     with_backend_type!(backend, |B| {
         let backend = B::create(dir.as_ref(), &storage_config())?;
@@ -348,7 +360,7 @@ fn specialized_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<d
         let num_keys = *NUM_KEYS;
 
         let mut key = 0usize;
-        measure(backend, |session| {
+        measure(backend, out, |session| {
             let mut state = state.activate(session);
             let mut value = state.value();
             value.set_item_key(key);
@@ -367,6 +379,7 @@ fn specialized_rmw(backend: BackendType, rng: fastrand::Rng) -> Result<(), Box<d
 }
 
 static TIMED_OUT: AtomicBool = AtomicBool::new(true);
+
 fn reset_timeout() {
     if !TIMED_OUT.load(Ordering::Relaxed) {
         panic!("Cannot reset an initialized timeout")
@@ -385,6 +398,7 @@ fn check_timeout() -> bool {
 
 fn measure<B: Backend>(
     backend: BackendContainer<B>,
+    mut out: Box<dyn Write>,
     mut f: impl FnMut(&mut Session<B>) -> Result<(), Box<dyn Error>>,
 ) -> Result<(), Box<dyn Error>> {
     eprint!("Measurement started... ");
@@ -413,7 +427,7 @@ fn measure<B: Backend>(
 
     let elapsed = start.elapsed();
     eprintln!("Done! {:?}", elapsed);
-    println!("{},{}", elapsed.as_nanos() / (ops_done as u128), ops_done);
+    writeln!(out, "{},{}", elapsed.as_nanos() / (ops_done as u128), ops_done)?;
 
     Ok(())
 }
