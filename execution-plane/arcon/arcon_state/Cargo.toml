@@ -31,7 +31,7 @@ once_cell = "1.3"
 serde = { version = "1.0", features = ["serde_derive"], optional = true }
 serde_bytes = { version = "0.11.5", optional = true }
 rocksdb = { git = "https://github.com/mrobakowski/rust-rocksdb.git", branch = "arcon", optional = true } # TODO
-sled = { git = "https://github.com/mrobakowski/sled.git", optional = true } # TODO
+sled = { version = "0.34.4", optional = true }
 
 [target.'cfg(target_os = "linux")'.dependencies]
 faster-rs = { git = "https://github.com/mrobakowski/faster-rs.git", optional = true }

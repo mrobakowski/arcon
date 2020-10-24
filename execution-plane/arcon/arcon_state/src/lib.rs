@@ -390,6 +390,8 @@ pub enum BackendType {
     Faster,
     #[cfg(all(feature = "faster", target_os = "linux"))]
     MeteredFaster,
+    #[doc(hidden)]
+    None
 }
 
 impl fmt::Display for BackendType {

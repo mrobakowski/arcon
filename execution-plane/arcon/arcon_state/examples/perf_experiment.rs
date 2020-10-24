@@ -93,7 +93,7 @@ env_var!(KEY_SIZE: usize = 8);
 env_var!(VALUE_SIZE: usize = 32);
 // 352 megabytes is the minimum size that FASTER doesn't hang up on
 env_var!(MEM_SIZE_HINT_MB: u64 = 352);
-env_var!(OUT_FILE: PathBuf = "STDOUT");
+env_var!(OUT_FILE: PathBuf = STDOUT);
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<_> = env::args().collect();

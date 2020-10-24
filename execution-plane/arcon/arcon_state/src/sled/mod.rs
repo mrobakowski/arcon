@@ -67,6 +67,7 @@ impl Backend for Sled {
         Self: Sized,
     {
         let mut opts = sled::Config::new().path(live_path);
+        opts = opts.mode(sled::Mode::HighThroughput);
         if let Some(mem_size) = storage_config.mem_size_hint {
             opts = opts.cache_capacity(mem_size)
         }
@@ -87,6 +88,7 @@ impl Backend for Sled {
         Self: Sized,
     {
         let mut opts = sled::Config::new().path(live_path);
+        opts = opts.mode(sled::Mode::HighThroughput);
         if let Some(mem_size) = storage_config.mem_size_hint {
             opts = opts.cache_capacity(mem_size)
         }

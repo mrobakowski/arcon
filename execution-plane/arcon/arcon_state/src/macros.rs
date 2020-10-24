@@ -168,7 +168,7 @@ macro_rules! cfg_if_rocks {
 #[macro_export]
 macro_rules! cfg_if_rocks {
     (@pat $i: pat) => {
-        _
+        $crate::BackendType::None
     };
     ($($body:tt)*) => { unreachable!() };
 }
@@ -190,7 +190,7 @@ macro_rules! cfg_if_sled {
 #[macro_export]
 macro_rules! cfg_if_sled {
     (@pat $i: pat) => {
-        _
+        $crate::BackendType::None
     };
     ($($body:tt)*) => { unreachable!() };
 }
@@ -212,7 +212,7 @@ macro_rules! cfg_if_faster {
 #[macro_export]
 macro_rules! cfg_if_faster {
     (@pat $i: pat) => {
-        _
+        $crate::BackendType::None
     };
     ($($body:tt)*) => { unreachable!() };
 }
