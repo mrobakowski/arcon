@@ -240,6 +240,9 @@ macro_rules! with_backend_type {
         use $crate::BackendType::*;
         #[allow(unreachable_patterns)]
         match $type_value {
+            None => {
+                unreachable!()
+            }
             InMemory => {
                 type $type_ident = $crate::in_memory::InMemory;
                 $body
