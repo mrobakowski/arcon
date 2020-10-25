@@ -1,0 +1,591 @@
+5,Faster,10,5000000,2500000,512,2048,39052,5000000
+
+
+resource usage stats
+
+Linux 5.4.0-42-generic (arcon1) 	10/25/2020 	_x86_64_	(64 CPU)
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:09 PM  1006    221926   78.00   21.00    0.00    0.00   99.00    27 144590.00      0.00  658400  583496   0.22      0.00      4.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:10 PM  1006    221926   78.00    4.00    0.00    0.00   82.00    27  26491.00      0.00  659020  584236   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:11 PM  1006    221926   79.00    4.00    0.00    0.00   83.00    27  66037.00      0.00  659640  584852   0.22      0.00 262144.00      0.00      17  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:12 PM  1006    221926   78.00    4.00    0.00    0.00   82.00    27  56223.00      0.00  660260  585440   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:13 PM  1006    221926   76.00    5.00    0.00    0.00   81.00    27  67692.00      0.00  660880  586036   0.22      0.00 294912.00      0.00      19  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:14 PM  1006    221926   78.00    3.00    0.00    0.00   81.00    27  66500.00      0.00  661500  586628   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:15 PM  1006    221926   79.00    3.00    0.00    0.00   82.00    27  42815.00      0.00  661996  587228   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:16 PM  1006    221926   79.00    3.00    0.00    0.00   82.00    27  39026.00      0.00  662616  587780   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:17 PM  1006    221926   77.00    5.00    0.00    0.00   82.00    27  10823.00      0.00  663236  588416   0.22      0.00 275199.50      0.00      19  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:18 PM  1006    221926   75.00    4.00    0.00    0.00   79.00    27  21237.00      0.00  663856  588988   0.22      0.00 281856.50      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:19 PM  1006    221926   77.00    4.00    0.00    0.00   81.00    27  49585.00      0.00  664352  589568   0.22      0.00 262144.00      0.00      21  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:20 PM  1006    221926   78.00    4.00    0.00    0.00   82.00    27  16834.00      0.00  664972  590092   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:21 PM  1006    221926   79.00    4.00    0.00    0.00   83.00    27  15423.00      0.00  665592  590748   0.22      0.00 262144.00      0.00      17  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:22 PM  1006    221926   77.00    4.00    0.00    0.00   81.00    27  14654.00      0.00  666088  591292   0.22      0.00 262144.00      0.00      20  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:23 PM  1006    221926   79.00    3.00    0.00    0.00   82.00    27  37794.00      0.00  666708  591872   0.22      0.00 262144.00      0.00      17  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:24 PM  1006    221926   79.00    3.00    0.00    0.00   82.00    27  27855.00      0.00  667328  592448   0.22      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:25 PM  1006    221926   79.00    3.00    0.00    0.00   82.00    28    421.00      0.00  667824  593016   0.22      0.00 262144.00      0.00      19  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:26 PM  1006    221926   78.00    4.00    0.00    0.00   82.00    28   2612.00      0.00  668444  593640   0.23      0.00 262144.00      0.00      17  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:27 PM  1006    221926   78.00    4.00    0.00    0.00   82.00    28  32944.00      0.00  669064  594184   0.23      0.00 262144.00      0.00      18  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:28 PM  1006    221926   75.00    9.00    0.00    0.00   84.00    28    457.00      0.00  669692  594816   0.23   3977.50 229376.00      0.00      17  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:29 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28     10.00      0.00  669692  594816   0.23  46043.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:30 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28   8221.00      0.00  669808  595012   0.23  46318.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:31 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28   8211.00      0.00  669808  595092   0.23  46093.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:32 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28   8809.00      0.00  669920  595180   0.23  46521.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:33 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8211.00      0.00  670040  595252   0.23  46059.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:34 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28   8708.00      0.00  670040  595320   0.23  45808.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:35 PM  1006    221926   49.00   50.00    0.00    0.00   99.00    28  15822.00      0.00  670144  595396   0.23  46837.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:36 PM  1006    221926   42.00   55.00    0.00    0.00   97.00    28  14553.00      0.00  670144  595452   0.23  46254.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:37 PM  1006    221926   42.00   56.00    0.00    0.00   98.00    28   8226.00      0.00  670264  595516   0.23  45851.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:38 PM  1006    221926   44.00   56.00    0.00    0.00  100.00    28   8214.00      0.00  670364  595604   0.23  47723.50  32768.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:39 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28    669.00      0.00  670364  595660   0.23  46950.50      0.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:40 PM  1006    221926   38.00   59.00    0.00    0.00   97.00    28  15210.00      0.00  670476  595736   0.23  46521.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:41 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28   9448.00      0.00  670584  595796   0.23  46415.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:42 PM  1006    221926   45.00   54.00    0.00    0.00   99.00    28   8294.00      0.00  670584  595816   0.23  46329.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:43 PM  1006    221926   39.00   58.00    0.00    0.00   97.00    28  13226.00      0.00  670684  595924   0.23  45937.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:44 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28  11508.00      0.00  670684  595984   0.23  46112.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:45 PM  1006    221926   45.00   53.00    0.00    0.00   98.00    28   8227.00      0.00  670804  596028   0.23  46310.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:46 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8255.00      0.00  670904  596124   0.23  46196.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:47 PM  1006    221926   52.00   47.00    0.00    0.00   99.00    28   8251.00      0.00  670904  596192   0.23  45827.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:48 PM  1006    221926   52.00   46.00    0.00    0.00   98.00    28   8217.00      0.00  671020  596256   0.23  46727.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:49 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28   9071.00      0.00  671020  596320   0.23  46125.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:50 PM  1006    221926   43.00   54.00    0.00    0.00   97.00    28   8343.00      0.00  671128  596404   0.23  45803.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:51 PM  1006    221926   43.00   57.00    0.00    0.00  100.00    28    157.00      0.00  671232  596452   0.23  48024.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:52 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28   8247.00      0.00  671232  596488   0.23  45637.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:53 PM  1006    221926   49.00   50.00    0.00    0.00   99.00    28   8254.00      0.00  671336  596556   0.23  46447.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:54 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28   8239.00      0.00  671448  596668   0.23  46141.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:55 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28   8227.00      0.00  671448  596688   0.23  46292.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:56 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28   8270.00      0.00  671560  596772   0.23  46260.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:57 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28   8245.00      0.00  671560  596864   0.23  46048.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:58 PM  1006    221926   47.52   49.50    0.00    0.00   97.03    28   8173.27      0.00  671668  596920   0.23  45824.26  32443.56      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:57:59 PM  1006    221926   47.00   52.00    0.00    0.00   99.00    28   8214.00      0.00  671780  596992   0.23  45805.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:00 PM  1006    221926   41.00   56.00    0.00    0.00   97.00    28   8251.00      0.00  671780  597064   0.23  46474.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:01 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28   9263.00      0.00  671884  597124   0.23  46450.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:02 PM  1006    221926   45.00   53.00    0.00    0.00   98.00    28   8540.00      0.00  671984  597204   0.23  46038.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:03 PM  1006    221926   42.00   58.00    0.00    0.00  100.00    28    233.00      0.00  671984  597252   0.23  47537.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:04 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28   8248.00      0.00  672096  597316   0.23  46930.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:05 PM  1006    221926   50.00   48.00    0.00    0.00   98.00    28   8254.00      0.00  672096  597384   0.23  45882.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:06 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28   8274.00      0.00  672216  597456   0.23  45781.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:07 PM  1006    221926   42.00   57.00    0.00    0.00   99.00    28   8216.00      0.00  672216  597504   0.23  46705.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:08 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28   8243.00      0.00  672332  597564   0.23  46197.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:09 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8242.00      0.00  672440  597652   0.23  45755.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:10 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28   8233.00      0.00  672440  597708   0.23  46048.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:11 PM  1006    221926   51.00   48.00    0.00    0.00   99.00    28   8232.00      0.00  672556  597788   0.23  46627.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:12 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8250.00      0.00  672556  597864   0.23  45495.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:13 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28   4401.00      0.00  672664  597928   0.23  46134.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:14 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28     36.00      0.00  672784  597996   0.23  46615.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:15 PM  1006    221926   47.00   52.00    0.00    0.00   99.00    28     45.00      0.00  672784  597996   0.23  47433.50  32768.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:16 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   1764.00      0.00  672904  598136   0.23  45874.00      0.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:17 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28  16287.00      0.00  672904  598212   0.23  46293.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:18 PM  1006    221926   51.00   47.00    0.00    0.00   98.00    28   1835.00      0.00  673012  598268   0.23  46381.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:19 PM  1006    221926   45.00   53.00    0.00    0.00   98.00    28    240.00      0.00  673132  598340   0.23  45781.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:20 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28     75.00      0.00  673132  598400   0.23  46289.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:21 PM  1006    221926   43.00   54.00    0.00    0.00   97.00    28     56.00      0.00  673244  598456   0.23  46104.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:22 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28     54.00      0.00  673244  598536   0.23  46420.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:23 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28  14928.00      0.00  673360  598624   0.23  45542.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:24 PM  1006    221926   42.00   55.00    0.00    0.00   97.00    28  13853.00      0.00  673496  598656   0.23  46716.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:25 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8215.00      0.00  673472  598724   0.23  46877.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:26 PM  1006    221926   48.00   51.00    0.00    0.00   99.00    28   6823.00      0.00  673584  598804   0.23  47012.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:27 PM  1006    221926   43.00   54.00    0.00    0.00   97.00    28     34.00      0.00  673584  598804   0.23  47202.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:28 PM  1006    221926   47.00   53.00    0.00    0.00  100.00    28     43.00      0.00  673696  598908   0.23  47853.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:29 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     70.00      0.00  673800  599020   0.23  46295.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:30 PM  1006    221926   49.00   48.00    0.00    0.00   97.00    28   8237.00      0.00  673800  599020   0.23  46607.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:31 PM  1006    221926   38.00   60.00    0.00    0.00   98.00    28   8226.00      0.00  673920  599124   0.23  45572.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:32 PM  1006    221926   43.00   54.00    0.00    0.00   97.00    28   8247.00      0.00  673920  599200   0.23  46506.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:33 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28   4139.00      0.00  674028  599268   0.23  47173.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:34 PM  1006    221926   42.00   57.00    0.00    0.00   99.00    28     65.00      0.00  674144  599348   0.23  46749.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:35 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28     68.00      0.00  674136  599412   0.23  46325.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:36 PM  1006    221926   41.00   56.00    0.00    0.00   97.00    28     60.00      0.00  674252  599456   0.23  46619.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:37 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28   5308.00      0.00  674252  599564   0.23  46390.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:38 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28   8765.00      0.00  674356  599612   0.23  45802.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:39 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28   8375.00      0.00  674468  599680   0.23  45974.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:40 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28   8518.00      0.00  674468  599760   0.23  46685.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:41 PM  1006    221926   47.00   53.00    0.00    0.00  100.00    28     47.00      0.00  674568  599788   0.23  47391.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:42 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28     49.00      0.00  674668  599888   0.23  46032.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:43 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28     43.00      0.00  674668  599888   0.23  46946.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:44 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28     50.00      0.00  674768  599988   0.23  45967.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:45 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   5053.00      0.00  674868  600088   0.23  45538.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:46 PM  1006    221926   39.00   58.00    0.00    0.00   97.00    28  15810.00      0.00  674868  600156   0.23  46461.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:47 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28  11944.00      0.00  674976  600212   0.23  46219.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:48 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28   8246.00      0.00  674976  600276   0.23  45654.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:49 PM  1006    221926   42.00   56.00    0.00    0.00   98.00    28   4933.00      0.00  675084  600340   0.23  46831.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:50 PM  1006    221926   50.00   48.00    0.00    0.00   98.00    28     45.00      0.00  675192  600404   0.23  46952.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:51 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28     41.00      0.00  675192  600404   0.23  46877.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:52 PM  1006    221926   47.00   52.00    0.00    0.00   99.00    28     52.00      0.00  675308  600512   0.23  46200.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:53 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28   8243.00      0.00  675308  600620   0.23  46586.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:54 PM  1006    221926   48.00   53.00    0.00    0.00  101.00    28     53.00      0.00  675416  600628   0.23  47595.50      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:55 PM  1006    221926   42.00   55.00    0.00    0.00   97.00    28   8242.00      0.00  675528  600736   0.23  46421.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:56 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28    190.00      0.00  675528  600824   0.23  46797.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:57 PM  1006    221926   50.00   48.00    0.00    0.00   98.00    28     47.00      0.00  675636  600848   0.23  47355.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:58 PM  1006    221926   50.00   47.00    0.00    0.00   97.00    28     54.00      0.00  675744  600956   0.23  47595.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:58:59 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28     56.00      0.00  675744  600956   0.23  46710.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:00 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     49.00      0.00  675852  601064   0.23  46103.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:01 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28     39.00      0.00  675852  601164   0.23  46349.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:02 PM  1006    221926   51.00   47.00    0.00    0.00   98.00    28     56.00      0.00  675964  601176   0.23  46920.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:03 PM  1006    221926   43.00   54.00    0.00    0.00   97.00    28   3148.00      0.00  676064  601304   0.23  46215.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:04 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28  16756.00      0.00  676064  601380   0.23  46853.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:05 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28   7034.00      0.00  676172  601428   0.23  46581.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:06 PM  1006    221926   42.00   57.00    0.00    0.00   99.00    28     49.00      0.00  676288  601492   0.23  45972.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:07 PM  1006    221926   45.00   54.00    0.00    0.00   99.00    28    697.00      0.00  676288  601568   0.23  47665.50      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:08 PM  1006    221926   49.00   50.00    0.00    0.00   99.00    28     75.00      0.00  676392  601608   0.23  46064.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:09 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28     55.00      0.00  676392  601684   0.23  46553.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:10 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28     47.00      0.00  676508  601712   0.23  45809.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:11 PM  1006    221926   43.00   55.00    0.00    1.00   98.00    28     53.00      0.00  676616  601828   0.23  46188.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:12 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28     45.00      0.00  676616  601828   0.23  46763.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:13 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28   2846.00      0.00  676724  601936   0.23  45928.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:14 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28   3840.00      0.00  676828  602048   0.23  46092.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:15 PM  1006    221926   40.00   57.00    0.00    0.00   97.00    28   4898.00      0.00  676828  602088   0.23  46713.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:16 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28     42.00      0.00  676944  602088   0.23  46423.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:17 PM  1006    221926   50.00   49.00    0.00    0.00   99.00    28   8241.00      0.00  676944  602232   0.23  45887.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:18 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28   8241.00      0.00  677060  602304   0.23  46439.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:19 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28   8243.00      0.00  677060  602376   0.23  46293.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:20 PM  1006    221926   45.00   55.00    0.00    0.00  100.00    28     49.00      0.00  677176  602380   0.23  47295.50      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:21 PM  1006    221926   44.00   55.00    0.00    0.00   99.00    28   8253.00      0.00  677284  602504   0.23  45874.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:22 PM  1006    221926   49.00   48.00    0.00    0.00   97.00    28   8244.00      0.00  677284  602576   0.23  46067.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:23 PM  1006    221926   45.00   53.00    0.00    0.00   98.00    28   8238.00      0.00  677392  602604   0.23  45942.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:24 PM  1006    221926   51.00   47.00    0.00    0.00   98.00    28   6018.00      0.00  677392  602676   0.23  46024.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:25 PM  1006    221926   48.00   49.00    0.00    0.00   97.00    28     57.00      0.00  677508  602716   0.23  46391.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:26 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28     47.00      0.00  677616  602828   0.23  46006.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:27 PM  1006    221926   46.00   51.00    0.00    0.00   97.00    28     51.00      0.00  677616  602828   0.23  45851.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:28 PM  1006    221926   42.00   56.00    0.00    0.00   98.00    28     47.00      0.00  677724  602936   0.23  46453.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:29 PM  1006    221926   53.00   45.00    0.00    0.00   98.00    28     44.00      0.00  677832  603044   0.23  45880.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:30 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28     45.00      0.00  677824  603044   0.23  46336.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:31 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28     46.00      0.00  677944  603156   0.23  46484.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:32 PM  1006    221926   44.00   56.00    0.00    0.00  100.00    28     47.00      0.00  677944  603240   0.23  47575.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:33 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28     52.00      0.00  678068  603264   0.23  45984.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:34 PM  1006    221926   43.00   56.00    0.00    0.00   99.00    28     48.00      0.00  678068  603360   0.23  46421.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:35 PM  1006    221926   41.00   55.00    0.00    0.00   96.00    28     47.00      0.00  678180  603392   0.23  46186.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:36 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     54.00      0.00  678288  603500   0.23  45673.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:37 PM  1006    221926   45.00   54.00    0.00    0.00   99.00    28     51.00      0.00  678288  603500   0.23  46334.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:38 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28  13530.00      0.00  678404  603652   0.23  46268.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:39 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28   9469.00      0.00  678404  603704   0.23  45602.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:40 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28   9190.00      0.00  678512  603772   0.23  46004.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:41 PM  1006    221926   50.00   47.00    0.00    0.00   97.00    28     42.00      0.00  678620  603832   0.23  46688.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:42 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     47.00      0.00  678620  603832   0.23  45925.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:43 PM  1006    221926   43.00   55.00    0.00    0.00   98.00    28     49.00      0.00  678736  603948   0.23  45970.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:44 PM  1006    221926   50.00   50.00    0.00    0.00  100.00    28     50.00      0.00  678736  604028   0.23  48017.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:45 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28     48.00      0.00  678848  604060   0.23  46227.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:46 PM  1006    221926   44.00   53.00    0.00    0.00   97.00    28     50.00      0.00  678948  604152   0.23  45802.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:47 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     49.00      0.00  678948  604228   0.23  45904.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:48 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28     46.00      0.00  679056  604268   0.23  46735.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:49 PM  1006    221926   48.00   49.00    0.00    0.00   97.00    28     51.00      0.00  679176  604380   0.23  45779.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:50 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28     52.00      0.00  679168  604380   0.23  46039.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:51 PM  1006    221926   43.56   52.48    0.00    0.00   96.04    28     58.42      0.00  679280  604492   0.23  45702.97  32443.56      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:52 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28     49.00      0.00  679280  604564   0.23  46067.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:53 PM  1006    221926   50.00   48.00    0.00    0.00   98.00    28   8241.00      0.00  679380  604640   0.23  45814.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:54 PM  1006    221926   45.00   53.00    0.00    0.00   98.00    28   8239.00      0.00  679492  604700   0.23  46185.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:55 PM  1006    221926   42.00   56.00    0.00    0.00   98.00    28   8250.00      0.00  679492  604780   0.23  46083.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:56 PM  1006    221926   46.00   54.00    0.00    0.00  100.00    28     48.00      0.00  679604  604816   0.23  47326.50      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:57 PM  1006    221926   37.00   61.00    0.00    0.00   98.00    28   8241.00      0.00  679604  604900   0.23  46297.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:58 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28   8238.00      0.00  679716  604928   0.23  46179.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+01:59:59 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28   8239.00      0.00  679816  605036   0.23  46455.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:00 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28   8240.00      0.00  679816  605112   0.23  45996.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:01 PM  1006    221926   42.00   56.00    0.00    0.00   98.00    28   5958.00      0.00  679932  605184   0.23  46815.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:02 PM  1006    221926   38.00   60.00    0.00    0.00   98.00    28     55.00      0.00  680040  605260   0.23  46102.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:03 PM  1006    221926   52.00   46.00    0.00    0.00   98.00    28     53.00      0.00  680040  605260   0.23  46487.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:04 PM  1006    221926   46.00   52.00    0.00    0.00   98.00    28     53.00      0.00  680152  605364   0.23  46040.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:05 PM  1006    221926   39.00   58.00    0.00    0.00   97.00    28     68.00      0.00  680152  605424   0.23  45722.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:06 PM  1006    221926   47.00   50.00    0.00    0.00   97.00    28     50.00      0.00  680260  605472   0.23  46008.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:07 PM  1006    221926   48.00   50.00    0.00    0.00   98.00    28     46.00      0.00  680360  605580   0.23  46456.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:08 PM  1006    221926   47.00   53.00    0.00    0.00  100.00    28     47.00      0.00  680360  605580   0.23  47497.50      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:09 PM  1006    221926   52.00   46.00    0.00    0.00   98.00    28     49.00      0.00  680472  605684   0.23  46569.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:10 PM  1006    221926   49.00   49.00    0.00    0.00   98.00    28     44.00      0.00  680572  605792   0.23  46908.00  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:11 PM  1006    221926   42.00   55.00    0.00    0.00   97.00    28     45.00      0.00  680572  605792   0.23  46280.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:12 PM  1006    221926   49.00   48.00    0.00    0.00   97.00    28     44.00      0.00  680688  605892   0.23  45934.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:13 PM  1006    221926   40.00   59.00    0.00    0.00   99.00    28     44.00      0.00  680688  605892   0.23  45834.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:14 PM  1006    221926   45.00   52.00    0.00    0.00   97.00    28     48.00      0.00  680788  606008   0.23  46366.50  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:15 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     52.00      0.00  680896  606108   0.23  46010.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:16 PM  1006    221926   44.00   54.00    0.00    0.00   98.00    28     48.00      0.00  680896  606108   0.23  46736.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:17 PM  1006    221926   48.00   49.00    0.00    0.00   97.00    28     48.00      0.00  681004  606196   0.23  46852.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:18 PM  1006    221926   52.00   46.00    0.00    0.00   98.00    28     50.00      0.00  681004  606284   0.23  46502.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:19 PM  1006    221926   53.00   45.00    0.00    0.00   98.00    28     52.00      0.00  681120  606332   0.23  46307.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:20 PM  1006    221926   41.00   57.00    0.00    0.00   98.00    28     51.00      0.00  681224  606444   0.23  46785.50  32768.00      0.00       3  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:21 PM  1006    221926   45.00   55.00    0.00    0.00  100.00    28     53.00      0.00  681224  606532   0.23  47294.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:22 PM  1006    221926   48.00   49.00    0.00    0.00   97.00    28     47.00      0.00  681336  606556   0.23  46091.00  32768.00      0.00       2  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:00:23 PM  1006    221926   47.00   51.00    0.00    0.00   98.00    28   5196.00      0.00  681436  606660   0.23  45965.00  32768.00      0.00       2  perf_experiment

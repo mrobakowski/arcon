@@ -14,7 +14,7 @@ EXPERIMENT_OPS="res/experiment_results_ops.csv"
 mkdir res
 rm $EXPERIMENT_RESULTS
 rm $EXPERIMENT_OPS
-rm ../../target/raw_results_*
+rm res/raw_results_*
 
 for experiment in 1 2 3 4 5; do
   echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>$EXPERIMENT_RESULTS

@@ -1,0 +1,24 @@
+3,Faster,100,5000000,2500000,32,128,1167,5000000
+
+
+resource usage stats
+
+Linux 5.4.0-42-generic (arcon1) 	10/25/2020 	_x86_64_	(64 CPU)
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:23 AM  1006    219335   76.00   23.00    0.00    0.00   99.00    19 144534.00      0.00  658176  583236   0.22      0.00      4.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:24 AM  1006    219335   86.00    3.00    0.00    0.00   89.00    19  40434.00      0.00  658704  583780   0.22      0.00 163840.00      0.00       8  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:25 AM  1006    219335   85.00    3.00    0.00    0.00   88.00    19  54577.00      0.00  658968  584108   0.22      0.00 163840.00      0.00      15  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:26 AM  1006    219335   80.00    3.00    0.00    0.00   83.00    19  59773.00      0.00  659364  584524   0.22      0.00 229376.00      0.00      16  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:27 AM  1006    219335   80.00    4.00    0.00    0.00   84.00    19  59302.00      0.00  659760  584920   0.22      0.00 229376.00      0.00      16  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+02:48:28 AM  1006    219335   84.00    2.00    0.00    0.00   86.00    19  55618.00      0.00  660156  585272   0.22      0.00 196608.00      0.00      14  perf_experiment

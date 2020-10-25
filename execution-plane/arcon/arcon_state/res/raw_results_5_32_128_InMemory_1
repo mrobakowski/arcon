@@ -1,0 +1,21 @@
+5,InMemory,1,5000000,2500000,32,128,842,5000000
+
+
+resource usage stats
+
+Linux 5.4.0-42-generic (arcon1) 	10/25/2020 	_x86_64_	(64 CPU)
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+10:53:53 AM  1006    221089   79.00   20.00    0.00    0.00   99.00    52 157726.00      0.00  641444  528624   0.20      0.00      4.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+10:53:54 AM  1006    221089   76.00   24.00    0.00    0.00  100.00    52 218088.00      0.00 1121744  879432   0.33      0.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+10:53:55 AM  1006    221089   86.00   14.00    0.00    0.00  100.00    52 126978.00      0.00 1021012  948060   0.36      0.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+10:53:56 AM  1006    221089   92.00    8.00    0.00    0.00  100.00    52 147475.00      0.00 1021012  948060   0.36      0.00      0.00      0.00       0  perf_experiment
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+10:53:57 AM  1006    221089   92.00    8.00    0.00    0.00  100.00    52 125379.00      0.00  590928  517976   0.20      0.00      0.00      0.00       0  perf_experiment
