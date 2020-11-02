@@ -1,816 +1,271 @@
-1,Faster,10,5000000,2500000,8,32,53042,5000000
-
-
-resource usage stats
-
-Linux 5.4.0-42-generic (arcon1) 	10/24/2020 	_x86_64_	(64 CPU)
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:09 PM  1006    217126   79.21   18.81    0.00    0.00   98.02    19 143000.99      0.00  590180  582724   0.22      0.00      3.96      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:10 PM  1006    217126   95.00    0.00    0.00    0.00   95.00    19      4.00      0.00  590180  582724   0.22      0.00  65536.00      0.00       5  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:11 PM  1006    217126   90.00    1.00    0.00    0.00   91.00    19      2.00      0.00  590180  582724   0.22      0.00 131072.00      0.00       7  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:12 PM  1006    217126   90.00    0.00    0.00    0.00   90.00    19      0.00      0.00  590180  582724   0.22      0.00  98304.00      0.00      11  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:13 PM  1006    217126   93.00    2.00    0.00    0.00   95.00    19      1.00      0.00  590180  582724   0.22      0.00  98304.00      0.00       4  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:14 PM  1006    217126   99.00    0.00    0.00    0.00   99.00    19     39.00      0.00  657912  583172   0.22   6257.00      0.00      0.00       3  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:15 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19  12312.00      0.00  658048  583424   0.22   7433.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:16 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3113.00      0.00  658048  583456   0.22   7487.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:17 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   7751.00      0.00  658180  583572   0.22   7450.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:18 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   6891.00      0.00  658312  583628   0.22   7513.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:19 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   6229.00      0.00  658312  583716   0.22   7503.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:20 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19  17215.00      0.00  658448  583836   0.22   7400.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:21 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   6141.00      0.00  658576  583924   0.22   7514.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:22 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   7016.00      0.00  658708  584008   0.22   7441.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:23 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   7023.00      0.00  658708  584076   0.22   7445.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:24 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   6401.00      0.00  658840  584212   0.22   7512.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:25 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   5527.00      0.00  658976  584308   0.22   7587.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:26 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19  15967.00      0.00  658976  584348   0.22   7492.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:27 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   6729.00      0.00  659104  584472   0.22   7599.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:28 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19   5438.00      0.00  659236  584552   0.22   7569.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:29 PM  1006    217126   98.00    1.00    0.00    0.00   99.00    19   7028.00      0.00  659236  584624   0.22   7549.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:30 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   6668.00      0.00  659364  584720   0.22   7578.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:31 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   6145.00      0.00  659364  584776   0.22   7545.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:32 PM  1006    217126   98.00    1.00    0.00    0.00   99.00    19   5562.00      0.00  659500  584868   0.22   7609.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:33 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   4911.00      0.00  659624  584964   0.22   7575.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:34 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19  12521.00      0.00  659756  585104   0.22   7530.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:35 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   8681.00      0.00  659756  585144   0.22   7553.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:36 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   5174.00      0.00  659892  585256   0.22   7562.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:37 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4548.00      0.00  660028  585360   0.22   7576.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:38 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   6866.00      0.00  660028  585432   0.22   7559.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:39 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   6453.00      0.00  660160  585528   0.22   7562.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:40 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   6174.00      0.00  660292  585632   0.22   7559.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:41 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5387.00      0.00  660292  585688   0.22   7565.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:42 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   4748.00      0.00  660428  585800   0.22   7592.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:43 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   4239.00      0.00  660564  585880   0.22   7549.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:44 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   3836.00      0.00  660564  585960   0.22   7591.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:45 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19  14859.00      0.00  660692  586056   0.22   7494.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:46 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5430.00      0.00  660828  586136   0.22   7538.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:47 PM  1006    217126   96.00    5.00    0.00    0.00  101.00    19   4529.00      0.00  660828  586200   0.22   7553.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:48 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   4033.00      0.00  660964  586308   0.22   7587.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:49 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19   4530.00      0.00  660964  586380   0.22   7560.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:50 PM  1006    217126   99.00    0.00    0.00    0.00   99.00    19   6819.00      0.00  661096  586468   0.22   7575.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:51 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   6238.00      0.00  661232  586564   0.22   7546.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:52 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   5479.00      0.00  661232  586652   0.22   7617.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:53 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   4929.00      0.00  661368  586756   0.22   7530.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:54 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   4469.00      0.00  661496  586864   0.22   7551.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:55 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   3988.00      0.00  661628  586936   0.22   7602.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:56 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   3596.00      0.00  661628  587008   0.22   7577.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:57 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   3252.00      0.00  661760  587108   0.22   7626.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:58 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   2901.00      0.00  661760  587156   0.22   7583.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:14:59 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19  14591.00      0.00  661896  587300   0.22   7520.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:00 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4738.00      0.00  662024  587400   0.22   7593.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:01 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   3850.00      0.00  662156  587456   0.22   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:02 PM  1006    217126   95.00    4.00    0.00    0.00   99.00    19   3527.00      0.00  662156  587568   0.22   7579.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:03 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   3234.00      0.00  662288  587652   0.22   7569.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:04 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   3206.00      0.00  662288  587708   0.22   7557.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:05 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   6775.00      0.00  662424  587824   0.22   7553.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:06 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   6064.00      0.00  662556  587880   0.22   7558.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:07 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5475.00      0.00  662556  587968   0.22   7555.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:08 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   4868.00      0.00  662692  588088   0.22   7583.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:09 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   4413.00      0.00  662828  588184   0.22   7608.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:10 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   3917.00      0.00  662964  588240   0.22   7552.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:11 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   3605.00      0.00  662964  588332   0.22   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:12 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   3221.00      0.00  663096  588420   0.22   7553.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:13 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   2845.00      0.00  663096  588508   0.22   7593.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:14 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   2466.00      0.00  663224  588596   0.22   7605.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:15 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   2245.00      0.00  663352  588724   0.22   7585.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:16 PM  1006    217126   93.00    6.00    0.00    0.00   99.00    19   2060.00      0.00  663484  588776   0.22   7582.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:17 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19  13933.00      0.00  663476  588880   0.22   7496.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:18 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4275.00      0.00  663612  588976   0.22   7578.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:19 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3538.00      0.00  663748  589048   0.22   7541.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:20 PM  1006    217126   95.00    4.00    0.00    0.00   99.00    19   3022.00      0.00  663748  589128   0.22   7568.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:21 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   2664.00      0.00  663884  589224   0.22   7564.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:22 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   2440.00      0.00  663884  589292   0.22   7581.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:23 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2185.00      0.00  664012  589420   0.22   7580.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:24 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   4003.00      0.00  664144  589492   0.22   7543.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:25 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   6457.00      0.00  664264  589572   0.22   7620.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:26 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5742.00      0.00  664264  589660   0.22   7584.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:27 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   5154.00      0.00  664400  589756   0.22   7597.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:28 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4586.00      0.00  664532  589872   0.22   7549.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:29 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3962.00      0.00  664532  589944   0.22   7614.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:30 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3723.00      0.00  664668  590016   0.22   7553.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:31 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   3303.00      0.00  664804  590096   0.22   7582.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:32 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   2927.00      0.00  664796  590176   0.22   7606.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:33 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2665.00      0.00  664932  590268   0.22   7607.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:34 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2328.00      0.00  665056  590380   0.22   7590.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:35 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   2139.00      0.00  665056  590460   0.22   7551.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:36 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   1884.00      0.00  665184  590540   0.22   7599.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:37 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1753.00      0.00  665320  590640   0.22   7595.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:38 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1477.00      0.00  665320  590728   0.22   7579.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:39 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1294.00      0.00  665452  590808   0.22   7630.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:40 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   8654.00      0.00  665588  590888   0.22   7544.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:41 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   7629.00      0.00  665588  590996   0.22   7556.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:42 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3395.00      0.00  665720  591080   0.22   7621.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:43 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2975.00      0.00  665852  591168   0.22   7579.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:44 PM  1006    217126  100.00    0.00    0.00    0.00  100.00    19   2575.00      0.00  665852  591268   0.22   7611.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:45 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2357.00      0.00  665984  591324   0.22   7592.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:46 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   2071.00      0.00  666096  591460   0.22   7583.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:47 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   1866.00      0.00  666096  591508   0.22   7589.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:48 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   1716.00      0.00  666224  591604   0.22   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:49 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1439.00      0.00  666360  591684   0.22   7615.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:50 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   5779.00      0.00  666496  591796   0.22   7520.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:51 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   5863.00      0.00  666496  591868   0.22   7547.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:52 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5234.00      0.00  666628  591992   0.22   7595.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:53 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4710.00      0.00  666628  592032   0.22   7594.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:54 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4219.00      0.00  666764  592152   0.22   7583.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:55 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3675.00      0.00  666888  592260   0.22   7579.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:56 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3277.00      0.00  666888  592300   0.22   7583.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:57 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   3049.00      0.00  667024  592412   0.22   7607.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:58 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2626.00      0.00  667152  592524   0.22   7591.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:15:59 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   2430.00      0.00  667152  592556   0.22   7599.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:00 PM  1006    217126   97.03    1.98    0.00    0.00   99.01    19   2104.95      0.00  667280  592660   0.22   7484.65      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:01 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1873.00      0.00  667416  592768   0.22   7594.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:02 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   1733.00      0.00  667416  592832   0.22   7571.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:03 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1578.00      0.00  667548  592928   0.22   7612.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:04 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1422.00      0.00  667676  593024   0.22   7582.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:05 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1261.00      0.00  667808  593116   0.22   7557.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:06 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   1251.00      0.00  667808  593228   0.22   7597.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:07 PM  1006    217126   99.00    0.00    0.00    0.00   99.00    19   1013.00      0.00  667944  593332   0.22   7578.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:08 PM  1006    217126   98.00    2.00    0.00    1.00  100.00    19    964.00      0.00  668072  593388   0.22   7568.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:09 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    806.00      0.00  668072  593460   0.22   7582.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:10 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19    758.00      0.00  668196  593596   0.23   7631.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:11 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19  13147.00      0.00  668328  593652   0.23   7501.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:12 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3349.00      0.00  668328  593708   0.23   7548.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:13 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2812.00      0.00  668464  593856   0.23   7579.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:14 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2356.00      0.00  668596  593936   0.23   7602.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:15 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2023.00      0.00  668596  593988   0.23   7597.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:16 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1846.00      0.00  668728  594100   0.23   7585.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:17 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1697.00      0.00  668856  594180   0.23   7607.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:18 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1508.00      0.00  668856  594268   0.23   7604.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:19 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1378.00      0.00  668992  594380   0.23   7585.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:20 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1211.00      0.00  669128  594452   0.23   7599.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:21 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1138.00      0.00  669128  594516   0.23   7608.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:22 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    984.00      0.00  669260  594648   0.23   7583.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:23 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4170.00      0.00  669372  594744   0.23   7526.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:24 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5810.00      0.00  669372  594784   0.23   7548.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:25 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5151.00      0.00  669508  594904   0.23   7613.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:26 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   4828.00      0.00  669636  595024   0.23   7585.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:27 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   4238.00      0.00  669764  595064   0.23   7599.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:28 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3758.00      0.00  669764  595144   0.23   7551.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:29 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3384.00      0.00  669892  595272   0.23   7565.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:30 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2969.00      0.00  670028  595336   0.23   7555.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:31 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   2641.00      0.00  670028  595420   0.23   7588.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:32 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2415.00      0.00  670160  595516   0.23   7616.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:33 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2227.00      0.00  670272  595612   0.23   7576.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:34 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19   1860.00      0.00  670272  595684   0.23   7573.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:35 PM  1006    217126   99.00    0.00    0.00    0.00   99.00    19   1723.00      0.00  670408  595780   0.23   7582.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:36 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1641.00      0.00  670544  595868   0.23   7609.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:37 PM  1006    217126  100.00    1.00    0.00    0.00  101.00    19   1373.00      0.00  670544  595956   0.23   7572.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:38 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1239.00      0.00  670676  596064   0.23   7601.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:39 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   1147.00      0.00  670812  596136   0.23   7582.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:40 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    955.00      0.00  670812  596224   0.23   7581.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:41 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    913.00      0.00  670948  596320   0.23   7623.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:42 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    840.00      0.00  671084  596396   0.23   7635.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:43 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    707.00      0.00  671084  596484   0.23   7611.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:44 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    651.00      0.00  671216  596572   0.23   7602.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:45 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19    586.00      0.00  671344  596644   0.23   7611.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:46 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19    542.00      0.00  671344  596732   0.23   7622.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:47 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19    475.00      0.00  671480  596844   0.23   7581.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:48 PM  1006    217126   98.00    1.00    0.00    0.00   99.00    19    475.00      0.00  671604  596944   0.23   7626.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:49 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    393.00      0.00  671724  597040   0.23   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:50 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    347.00      0.00  671724  597104   0.23   7566.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:51 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19  13955.00      0.00  671860  597216   0.23   7501.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:52 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2549.00      0.00  671988  597288   0.23   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:53 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2234.00      0.00  671988  597388   0.23   7624.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:54 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   2036.00      0.00  672120  597468   0.23   7611.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:55 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1741.00      0.00  672248  597548   0.23   7604.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:56 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1682.00      0.00  672248  597636   0.23   7594.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:57 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1495.00      0.00  672384  597740   0.23   7548.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:58 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   1376.00      0.00  672516  597848   0.23   7586.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:16:59 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1143.00      0.00  672516  597904   0.23   7593.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:00 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1135.00      0.00  672652  598016   0.23   7552.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:01 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19    932.00      0.00  672652  598072   0.23   7606.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:02 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    826.00      0.00  672788  598180   0.23   7607.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:03 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    785.00      0.00  672920  598268   0.23   7608.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:04 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    651.00      0.00  672920  598340   0.23   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:05 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    599.00      0.00  673056  598428   0.23   7584.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:06 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   2723.00      0.00  673192  598544   0.23   7571.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:07 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   5794.00      0.00  673316  598616   0.23   7581.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:08 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   5228.00      0.00  673316  598720   0.23   7584.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:09 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   4676.00      0.00  673436  598808   0.23   7617.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:10 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   4252.00      0.00  673572  598896   0.23   7565.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:11 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3707.00      0.00  673572  598948   0.23   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:12 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   3475.00      0.00  673696  599056   0.23   7573.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:13 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19   3051.00      0.00  673828  599160   0.23   7593.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:14 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2668.00      0.00  673828  599224   0.23   7577.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:15 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2422.00      0.00  673956  599332   0.23   7624.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:16 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2223.00      0.00  674084  599424   0.23   7594.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:17 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1988.00      0.00  674084  599480   0.23   7577.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:18 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1653.00      0.00  674220  599592   0.23   7620.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:19 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   1551.00      0.00  674348  599700   0.23   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:20 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   1463.00      0.00  674472  599772   0.23   7586.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:21 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19   1253.00      0.00  674472  599860   0.23   7579.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:22 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   1200.00      0.00  674608  599996   0.23   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:23 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   1043.00      0.00  674744  600060   0.23   7585.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:24 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    911.00      0.00  674744  600132   0.23   7612.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:25 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    778.00      0.00  674880  600240   0.23   7593.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:26 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    704.00      0.00  674880  600288   0.23   7618.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:27 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    659.00      0.00  675012  600400   0.23   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:28 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    581.00      0.00  675148  600504   0.23   7572.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:29 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19    501.00      0.00  675148  600560   0.23   7640.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:30 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19    482.00      0.00  675284  600660   0.23   7624.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:31 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    445.00      0.00  675416  600732   0.23   7556.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:32 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    390.00      0.00  675416  600820   0.23   7589.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:33 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    327.00      0.00  675552  600924   0.23   7631.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:34 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    345.00      0.00  675680  601008   0.23   7631.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:35 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    258.00      0.00  675804  601104   0.23   7607.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:36 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    245.00      0.00  675804  601184   0.23   7613.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:37 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    221.00      0.00  675940  601288   0.23   7608.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:38 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    215.00      0.00  676076  601392   0.23   7631.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:39 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    194.00      0.00  676076  601428   0.23   7563.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:40 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    179.00      0.00  676212  601556   0.23   7622.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:41 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19    137.00      0.00  676212  601616   0.23   7596.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:42 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19  13013.00      0.00  676344  601732   0.23   7504.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:43 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2490.00      0.00  676472  601820   0.23   7590.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:44 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2226.00      0.00  676472  601888   0.23   7562.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:45 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1950.00      0.00  676604  602008   0.23   7610.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:46 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1626.00      0.00  676740  602116   0.23   7573.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:47 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1454.00      0.00  676876  602192   0.23   7579.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:48 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1329.00      0.00  676876  602296   0.23   7576.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:49 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1175.00      0.00  677012  602344   0.23   7609.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:50 PM  1006    217126   98.00    1.00    0.00    0.00   99.00    19   1086.00      0.00  677144  602420   0.23   7577.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:51 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19    939.00      0.00  677144  602516   0.23   7602.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:52 PM  1006    217126   98.00    2.00    0.00    1.00  100.00    19    861.00      0.00  677272  602636   0.23   7616.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:53 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    723.00      0.00  677272  602684   0.23   7578.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:54 PM  1006    217126   96.00    3.00    0.00    0.00   99.00    19    679.00      0.00  677400  602772   0.23   7586.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:55 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19    620.00      0.00  677536  602880   0.23   7583.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:56 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    525.00      0.00  677536  602952   0.23   7590.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:57 PM  1006    217126  100.00    0.00    0.00    0.00  100.00    19    511.00      0.00  677668  603040   0.23   7610.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:58 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    444.00      0.00  677796  603160   0.23   7597.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:17:59 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    460.00      0.00  677928  603252   0.23   7576.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:00 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19    368.00      0.00  678060  603360   0.23   7586.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:01 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    338.00      0.00  678060  603428   0.23   7588.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:02 PM  1006    217126   97.00    4.00    0.00    0.00  101.00    19   4806.00      0.00  678184  603540   0.23   7490.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:03 PM  1006    217126   97.03    0.99    0.00    0.00   98.02    19   5493.07      0.00  678184  603596   0.23   7474.75      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:04 PM  1006    217126   98.00    3.00    0.00    0.00  101.00    19   5106.00      0.00  678320  603684   0.23   7586.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:05 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   4416.00      0.00  678440  603828   0.23   7562.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:06 PM  1006    217126   94.00    6.00    0.00    0.00  100.00    19   4071.00      0.00  678576  603868   0.23   7574.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:07 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   3487.00      0.00  678576  603960   0.23   7538.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:08 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19   3198.00      0.00  678708  604044   0.23   7561.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:09 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19   2875.00      0.00  678832  604144   0.23   7586.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:10 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   2534.00      0.00  678832  604208   0.23   7584.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:11 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2357.00      0.00  678964  604312   0.23   7554.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:12 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   2095.00      0.00  678964  604384   0.23   7558.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:13 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1833.00      0.00  679100  604476   0.23   7571.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:14 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1701.00      0.00  679224  604588   0.23   7611.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:15 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19   1447.00      0.00  679360  604692   0.23   7577.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:16 PM  1006    217126   95.00    5.00    0.00    0.00  100.00    19   1347.00      0.00  679360  604732   0.23   7611.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:17 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19   1195.00      0.00  679484  604848   0.23   7611.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:18 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19   1045.00      0.00  679484  604904   0.23   7584.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:19 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    875.00      0.00  679620  605024   0.23   7580.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:20 PM  1006    217126   96.00    4.00    0.00    0.00  100.00    19    865.00      0.00  679756  605136   0.23   7646.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:21 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    730.00      0.00  679756  605176   0.23   7572.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:22 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    725.00      0.00  679884  605284   0.23   7618.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:23 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    629.00      0.00  680020  605356   0.23   7624.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:24 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    542.00      0.00  680020  605436   0.23   7602.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:25 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    468.00      0.00  680152  605540   0.23   7598.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:26 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    475.00      0.00  680288  605644   0.23   7583.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:27 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    376.00      0.00  680424  605728   0.23   7628.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:28 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    340.00      0.00  680424  605812   0.23   7613.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:29 PM  1006    217126   99.00    1.00    0.00    0.00  100.00    19    355.00      0.00  680560  605892   0.23   7606.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:30 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    286.00      0.00  680696  605964   0.23   7595.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:31 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    276.00      0.00  680696  606064   0.23   7628.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:32 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    256.00      0.00  680812  606160   0.23   7623.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:33 PM  1006    217126   98.00    2.00    0.00    0.00  100.00    19    227.00      0.00  680944  606252   0.23   7570.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:34 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19    178.00      0.00  680944  606332   0.23   7644.00      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:35 PM  1006    217126   99.00    2.00    0.00    0.00  101.00    19    184.00      0.00  681080  606460   0.23   7601.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:36 PM  1006    217126   97.00    2.00    0.00    0.00   99.00    19    160.00      0.00  681080  606496   0.23   7618.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:37 PM  1006    217126   97.00    3.00    0.00    0.00  100.00    19    183.00      0.00  681212  606624   0.23   7580.50      0.00      0.00       0  perf_experiment
-
-# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
-06:18:38 PM  1006    217126   96.00    5.00    0.00    0.00  101.00    19    143.00      0.00  681344  606704   0.23   7622.50      0.00      0.00       0  perf_experiment
+Time	UID	PID	%usr	%system	%guest	%wait	%CPU	CPU	minflt/s	majflt/s	VSZ	RSS	%MEM	kB_rd/s	kB_wr/s	kB_ccwr/s	iodelay	Command
+06:14:09 PM	1006	217126	79.21	18.81	0.00	0.00	98.02	19	143000.99	0.00	590180	582724	0.22	0.00	3.96	0.00	0	perf_experiment
+06:14:10 PM	1006	217126	95.00	0.00	0.00	0.00	95.00	19	4.00	0.00	590180	582724	0.22	0.00	65536.00	0.00	5	perf_experiment
+06:14:11 PM	1006	217126	90.00	1.00	0.00	0.00	91.00	19	2.00	0.00	590180	582724	0.22	0.00	131072.00	0.00	7	perf_experiment
+06:14:12 PM	1006	217126	90.00	0.00	0.00	0.00	90.00	19	0.00	0.00	590180	582724	0.22	0.00	98304.00	0.00	11	perf_experiment
+06:14:13 PM	1006	217126	93.00	2.00	0.00	0.00	95.00	19	1.00	0.00	590180	582724	0.22	0.00	98304.00	0.00	4	perf_experiment
+06:14:14 PM	1006	217126	99.00	0.00	0.00	0.00	99.00	19	39.00	0.00	657912	583172	0.22	6257.00	0.00	0.00	3	perf_experiment
+06:14:15 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	12312.00	0.00	658048	583424	0.22	7433.00	0.00	0.00	0	perf_experiment
+06:14:16 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3113.00	0.00	658048	583456	0.22	7487.00	0.00	0.00	0	perf_experiment
+06:14:17 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	7751.00	0.00	658180	583572	0.22	7450.50	0.00	0.00	0	perf_experiment
+06:14:18 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	6891.00	0.00	658312	583628	0.22	7513.00	0.00	0.00	0	perf_experiment
+06:14:19 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	6229.00	0.00	658312	583716	0.22	7503.50	0.00	0.00	0	perf_experiment
+06:14:20 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	17215.00	0.00	658448	583836	0.22	7400.50	0.00	0.00	0	perf_experiment
+06:14:21 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	6141.00	0.00	658576	583924	0.22	7514.50	0.00	0.00	0	perf_experiment
+06:14:22 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	7016.00	0.00	658708	584008	0.22	7441.00	0.00	0.00	0	perf_experiment
+06:14:23 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	7023.00	0.00	658708	584076	0.22	7445.00	0.00	0.00	0	perf_experiment
+06:14:24 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	6401.00	0.00	658840	584212	0.22	7512.00	0.00	0.00	0	perf_experiment
+06:14:25 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	5527.00	0.00	658976	584308	0.22	7587.00	0.00	0.00	0	perf_experiment
+06:14:26 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	15967.00	0.00	658976	584348	0.22	7492.00	0.00	0.00	0	perf_experiment
+06:14:27 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	6729.00	0.00	659104	584472	0.22	7599.00	0.00	0.00	0	perf_experiment
+06:14:28 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	5438.00	0.00	659236	584552	0.22	7569.00	0.00	0.00	0	perf_experiment
+06:14:29 PM	1006	217126	98.00	1.00	0.00	0.00	99.00	19	7028.00	0.00	659236	584624	0.22	7549.00	0.00	0.00	0	perf_experiment
+06:14:30 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	6668.00	0.00	659364	584720	0.22	7578.50	0.00	0.00	0	perf_experiment
+06:14:31 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	6145.00	0.00	659364	584776	0.22	7545.50	0.00	0.00	0	perf_experiment
+06:14:32 PM	1006	217126	98.00	1.00	0.00	0.00	99.00	19	5562.00	0.00	659500	584868	0.22	7609.50	0.00	0.00	0	perf_experiment
+06:14:33 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	4911.00	0.00	659624	584964	0.22	7575.50	0.00	0.00	0	perf_experiment
+06:14:34 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	12521.00	0.00	659756	585104	0.22	7530.50	0.00	0.00	0	perf_experiment
+06:14:35 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	8681.00	0.00	659756	585144	0.22	7553.50	0.00	0.00	0	perf_experiment
+06:14:36 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	5174.00	0.00	659892	585256	0.22	7562.00	0.00	0.00	0	perf_experiment
+06:14:37 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4548.00	0.00	660028	585360	0.22	7576.50	0.00	0.00	0	perf_experiment
+06:14:38 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	6866.00	0.00	660028	585432	0.22	7559.00	0.00	0.00	0	perf_experiment
+06:14:39 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	6453.00	0.00	660160	585528	0.22	7562.00	0.00	0.00	0	perf_experiment
+06:14:40 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	6174.00	0.00	660292	585632	0.22	7559.50	0.00	0.00	0	perf_experiment
+06:14:41 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5387.00	0.00	660292	585688	0.22	7565.00	0.00	0.00	0	perf_experiment
+06:14:42 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	4748.00	0.00	660428	585800	0.22	7592.00	0.00	0.00	0	perf_experiment
+06:14:43 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	4239.00	0.00	660564	585880	0.22	7549.50	0.00	0.00	0	perf_experiment
+06:14:44 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	3836.00	0.00	660564	585960	0.22	7591.00	0.00	0.00	0	perf_experiment
+06:14:45 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	14859.00	0.00	660692	586056	0.22	7494.50	0.00	0.00	0	perf_experiment
+06:14:46 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5430.00	0.00	660828	586136	0.22	7538.00	0.00	0.00	0	perf_experiment
+06:14:47 PM	1006	217126	96.00	5.00	0.00	0.00	101.00	19	4529.00	0.00	660828	586200	0.22	7553.50	0.00	0.00	0	perf_experiment
+06:14:48 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	4033.00	0.00	660964	586308	0.22	7587.00	0.00	0.00	0	perf_experiment
+06:14:49 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	4530.00	0.00	660964	586380	0.22	7560.50	0.00	0.00	0	perf_experiment
+06:14:50 PM	1006	217126	99.00	0.00	0.00	0.00	99.00	19	6819.00	0.00	661096	586468	0.22	7575.50	0.00	0.00	0	perf_experiment
+06:14:51 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	6238.00	0.00	661232	586564	0.22	7546.50	0.00	0.00	0	perf_experiment
+06:14:52 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	5479.00	0.00	661232	586652	0.22	7617.50	0.00	0.00	0	perf_experiment
+06:14:53 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	4929.00	0.00	661368	586756	0.22	7530.50	0.00	0.00	0	perf_experiment
+06:14:54 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	4469.00	0.00	661496	586864	0.22	7551.50	0.00	0.00	0	perf_experiment
+06:14:55 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	3988.00	0.00	661628	586936	0.22	7602.50	0.00	0.00	0	perf_experiment
+06:14:56 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	3596.00	0.00	661628	587008	0.22	7577.50	0.00	0.00	0	perf_experiment
+06:14:57 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	3252.00	0.00	661760	587108	0.22	7626.50	0.00	0.00	0	perf_experiment
+06:14:58 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	2901.00	0.00	661760	587156	0.22	7583.50	0.00	0.00	0	perf_experiment
+06:14:59 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	14591.00	0.00	661896	587300	0.22	7520.50	0.00	0.00	0	perf_experiment
+06:15:00 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4738.00	0.00	662024	587400	0.22	7593.50	0.00	0.00	0	perf_experiment
+06:15:01 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	3850.00	0.00	662156	587456	0.22	7608.50	0.00	0.00	0	perf_experiment
+06:15:02 PM	1006	217126	95.00	4.00	0.00	0.00	99.00	19	3527.00	0.00	662156	587568	0.22	7579.50	0.00	0.00	0	perf_experiment
+06:15:03 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	3234.00	0.00	662288	587652	0.22	7569.50	0.00	0.00	0	perf_experiment
+06:15:04 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	3206.00	0.00	662288	587708	0.22	7557.50	0.00	0.00	0	perf_experiment
+06:15:05 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	6775.00	0.00	662424	587824	0.22	7553.50	0.00	0.00	0	perf_experiment
+06:15:06 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	6064.00	0.00	662556	587880	0.22	7558.50	0.00	0.00	0	perf_experiment
+06:15:07 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5475.00	0.00	662556	587968	0.22	7555.00	0.00	0.00	0	perf_experiment
+06:15:08 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	4868.00	0.00	662692	588088	0.22	7583.00	0.00	0.00	0	perf_experiment
+06:15:09 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	4413.00	0.00	662828	588184	0.22	7608.00	0.00	0.00	0	perf_experiment
+06:15:10 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	3917.00	0.00	662964	588240	0.22	7552.50	0.00	0.00	0	perf_experiment
+06:15:11 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	3605.00	0.00	662964	588332	0.22	7572.50	0.00	0.00	0	perf_experiment
+06:15:12 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	3221.00	0.00	663096	588420	0.22	7553.50	0.00	0.00	0	perf_experiment
+06:15:13 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	2845.00	0.00	663096	588508	0.22	7593.50	0.00	0.00	0	perf_experiment
+06:15:14 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	2466.00	0.00	663224	588596	0.22	7605.00	0.00	0.00	0	perf_experiment
+06:15:15 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	2245.00	0.00	663352	588724	0.22	7585.00	0.00	0.00	0	perf_experiment
+06:15:16 PM	1006	217126	93.00	6.00	0.00	0.00	99.00	19	2060.00	0.00	663484	588776	0.22	7582.00	0.00	0.00	0	perf_experiment
+06:15:17 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	13933.00	0.00	663476	588880	0.22	7496.50	0.00	0.00	0	perf_experiment
+06:15:18 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4275.00	0.00	663612	588976	0.22	7578.00	0.00	0.00	0	perf_experiment
+06:15:19 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3538.00	0.00	663748	589048	0.22	7541.00	0.00	0.00	0	perf_experiment
+06:15:20 PM	1006	217126	95.00	4.00	0.00	0.00	99.00	19	3022.00	0.00	663748	589128	0.22	7568.50	0.00	0.00	0	perf_experiment
+06:15:21 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	2664.00	0.00	663884	589224	0.22	7564.50	0.00	0.00	0	perf_experiment
+06:15:22 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	2440.00	0.00	663884	589292	0.22	7581.50	0.00	0.00	0	perf_experiment
+06:15:23 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2185.00	0.00	664012	589420	0.22	7580.00	0.00	0.00	0	perf_experiment
+06:15:24 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	4003.00	0.00	664144	589492	0.22	7543.50	0.00	0.00	0	perf_experiment
+06:15:25 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	6457.00	0.00	664264	589572	0.22	7620.00	0.00	0.00	0	perf_experiment
+06:15:26 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5742.00	0.00	664264	589660	0.22	7584.50	0.00	0.00	0	perf_experiment
+06:15:27 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	5154.00	0.00	664400	589756	0.22	7597.00	0.00	0.00	0	perf_experiment
+06:15:28 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4586.00	0.00	664532	589872	0.22	7549.00	0.00	0.00	0	perf_experiment
+06:15:29 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3962.00	0.00	664532	589944	0.22	7614.00	0.00	0.00	0	perf_experiment
+06:15:30 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3723.00	0.00	664668	590016	0.22	7553.50	0.00	0.00	0	perf_experiment
+06:15:31 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	3303.00	0.00	664804	590096	0.22	7582.00	0.00	0.00	0	perf_experiment
+06:15:32 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	2927.00	0.00	664796	590176	0.22	7606.50	0.00	0.00	0	perf_experiment
+06:15:33 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2665.00	0.00	664932	590268	0.22	7607.50	0.00	0.00	0	perf_experiment
+06:15:34 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2328.00	0.00	665056	590380	0.22	7590.50	0.00	0.00	0	perf_experiment
+06:15:35 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	2139.00	0.00	665056	590460	0.22	7551.00	0.00	0.00	0	perf_experiment
+06:15:36 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	1884.00	0.00	665184	590540	0.22	7599.50	0.00	0.00	0	perf_experiment
+06:15:37 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1753.00	0.00	665320	590640	0.22	7595.00	0.00	0.00	0	perf_experiment
+06:15:38 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1477.00	0.00	665320	590728	0.22	7579.50	0.00	0.00	0	perf_experiment
+06:15:39 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1294.00	0.00	665452	590808	0.22	7630.00	0.00	0.00	0	perf_experiment
+06:15:40 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	8654.00	0.00	665588	590888	0.22	7544.00	0.00	0.00	0	perf_experiment
+06:15:41 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	7629.00	0.00	665588	590996	0.22	7556.00	0.00	0.00	0	perf_experiment
+06:15:42 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3395.00	0.00	665720	591080	0.22	7621.00	0.00	0.00	0	perf_experiment
+06:15:43 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2975.00	0.00	665852	591168	0.22	7579.50	0.00	0.00	0	perf_experiment
+06:15:44 PM	1006	217126	100.00	0.00	0.00	0.00	100.00	19	2575.00	0.00	665852	591268	0.22	7611.00	0.00	0.00	0	perf_experiment
+06:15:45 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2357.00	0.00	665984	591324	0.22	7592.00	0.00	0.00	0	perf_experiment
+06:15:46 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	2071.00	0.00	666096	591460	0.22	7583.50	0.00	0.00	0	perf_experiment
+06:15:47 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	1866.00	0.00	666096	591508	0.22	7589.00	0.00	0.00	0	perf_experiment
+06:15:48 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	1716.00	0.00	666224	591604	0.22	7608.50	0.00	0.00	0	perf_experiment
+06:15:49 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1439.00	0.00	666360	591684	0.22	7615.50	0.00	0.00	0	perf_experiment
+06:15:50 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	5779.00	0.00	666496	591796	0.22	7520.00	0.00	0.00	0	perf_experiment
+06:15:51 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	5863.00	0.00	666496	591868	0.22	7547.00	0.00	0.00	0	perf_experiment
+06:15:52 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5234.00	0.00	666628	591992	0.22	7595.50	0.00	0.00	0	perf_experiment
+06:15:53 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4710.00	0.00	666628	592032	0.22	7594.00	0.00	0.00	0	perf_experiment
+06:15:54 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4219.00	0.00	666764	592152	0.22	7583.00	0.00	0.00	0	perf_experiment
+06:15:55 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3675.00	0.00	666888	592260	0.22	7579.00	0.00	0.00	0	perf_experiment
+06:15:56 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3277.00	0.00	666888	592300	0.22	7583.00	0.00	0.00	0	perf_experiment
+06:15:57 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	3049.00	0.00	667024	592412	0.22	7607.00	0.00	0.00	0	perf_experiment
+06:15:58 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2626.00	0.00	667152	592524	0.22	7591.50	0.00	0.00	0	perf_experiment
+06:15:59 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	2430.00	0.00	667152	592556	0.22	7599.50	0.00	0.00	0	perf_experiment
+06:16:00 PM	1006	217126	97.03	1.98	0.00	0.00	99.01	19	2104.95	0.00	667280	592660	0.22	7484.65	0.00	0.00	0	perf_experiment
+06:16:01 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1873.00	0.00	667416	592768	0.22	7594.00	0.00	0.00	0	perf_experiment
+06:16:02 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	1733.00	0.00	667416	592832	0.22	7571.50	0.00	0.00	0	perf_experiment
+06:16:03 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1578.00	0.00	667548	592928	0.22	7612.00	0.00	0.00	0	perf_experiment
+06:16:04 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1422.00	0.00	667676	593024	0.22	7582.50	0.00	0.00	0	perf_experiment
+06:16:05 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1261.00	0.00	667808	593116	0.22	7557.00	0.00	0.00	0	perf_experiment
+06:16:06 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	1251.00	0.00	667808	593228	0.22	7597.00	0.00	0.00	0	perf_experiment
+06:16:07 PM	1006	217126	99.00	0.00	0.00	0.00	99.00	19	1013.00	0.00	667944	593332	0.22	7578.50	0.00	0.00	0	perf_experiment
+06:16:08 PM	1006	217126	98.00	2.00	0.00	1.00	100.00	19	964.00	0.00	668072	593388	0.22	7568.50	0.00	0.00	0	perf_experiment
+06:16:09 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	806.00	0.00	668072	593460	0.22	7582.50	0.00	0.00	0	perf_experiment
+06:16:10 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	758.00	0.00	668196	593596	0.23	7631.50	0.00	0.00	0	perf_experiment
+06:16:11 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	13147.00	0.00	668328	593652	0.23	7501.50	0.00	0.00	0	perf_experiment
+06:16:12 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3349.00	0.00	668328	593708	0.23	7548.50	0.00	0.00	0	perf_experiment
+06:16:13 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2812.00	0.00	668464	593856	0.23	7579.50	0.00	0.00	0	perf_experiment
+06:16:14 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2356.00	0.00	668596	593936	0.23	7602.00	0.00	0.00	0	perf_experiment
+06:16:15 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2023.00	0.00	668596	593988	0.23	7597.50	0.00	0.00	0	perf_experiment
+06:16:16 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1846.00	0.00	668728	594100	0.23	7585.00	0.00	0.00	0	perf_experiment
+06:16:17 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1697.00	0.00	668856	594180	0.23	7607.00	0.00	0.00	0	perf_experiment
+06:16:18 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1508.00	0.00	668856	594268	0.23	7604.50	0.00	0.00	0	perf_experiment
+06:16:19 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1378.00	0.00	668992	594380	0.23	7585.00	0.00	0.00	0	perf_experiment
+06:16:20 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1211.00	0.00	669128	594452	0.23	7599.50	0.00	0.00	0	perf_experiment
+06:16:21 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1138.00	0.00	669128	594516	0.23	7608.00	0.00	0.00	0	perf_experiment
+06:16:22 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	984.00	0.00	669260	594648	0.23	7583.50	0.00	0.00	0	perf_experiment
+06:16:23 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4170.00	0.00	669372	594744	0.23	7526.50	0.00	0.00	0	perf_experiment
+06:16:24 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5810.00	0.00	669372	594784	0.23	7548.50	0.00	0.00	0	perf_experiment
+06:16:25 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5151.00	0.00	669508	594904	0.23	7613.50	0.00	0.00	0	perf_experiment
+06:16:26 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	4828.00	0.00	669636	595024	0.23	7585.00	0.00	0.00	0	perf_experiment
+06:16:27 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	4238.00	0.00	669764	595064	0.23	7599.00	0.00	0.00	0	perf_experiment
+06:16:28 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3758.00	0.00	669764	595144	0.23	7551.50	0.00	0.00	0	perf_experiment
+06:16:29 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3384.00	0.00	669892	595272	0.23	7565.00	0.00	0.00	0	perf_experiment
+06:16:30 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2969.00	0.00	670028	595336	0.23	7555.00	0.00	0.00	0	perf_experiment
+06:16:31 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	2641.00	0.00	670028	595420	0.23	7588.00	0.00	0.00	0	perf_experiment
+06:16:32 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2415.00	0.00	670160	595516	0.23	7616.50	0.00	0.00	0	perf_experiment
+06:16:33 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2227.00	0.00	670272	595612	0.23	7576.50	0.00	0.00	0	perf_experiment
+06:16:34 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	1860.00	0.00	670272	595684	0.23	7573.50	0.00	0.00	0	perf_experiment
+06:16:35 PM	1006	217126	99.00	0.00	0.00	0.00	99.00	19	1723.00	0.00	670408	595780	0.23	7582.00	0.00	0.00	0	perf_experiment
+06:16:36 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1641.00	0.00	670544	595868	0.23	7609.50	0.00	0.00	0	perf_experiment
+06:16:37 PM	1006	217126	100.00	1.00	0.00	0.00	101.00	19	1373.00	0.00	670544	595956	0.23	7572.00	0.00	0.00	0	perf_experiment
+06:16:38 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1239.00	0.00	670676	596064	0.23	7601.50	0.00	0.00	0	perf_experiment
+06:16:39 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	1147.00	0.00	670812	596136	0.23	7582.00	0.00	0.00	0	perf_experiment
+06:16:40 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	955.00	0.00	670812	596224	0.23	7581.50	0.00	0.00	0	perf_experiment
+06:16:41 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	913.00	0.00	670948	596320	0.23	7623.00	0.00	0.00	0	perf_experiment
+06:16:42 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	840.00	0.00	671084	596396	0.23	7635.50	0.00	0.00	0	perf_experiment
+06:16:43 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	707.00	0.00	671084	596484	0.23	7611.50	0.00	0.00	0	perf_experiment
+06:16:44 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	651.00	0.00	671216	596572	0.23	7602.50	0.00	0.00	0	perf_experiment
+06:16:45 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	586.00	0.00	671344	596644	0.23	7611.50	0.00	0.00	0	perf_experiment
+06:16:46 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	542.00	0.00	671344	596732	0.23	7622.00	0.00	0.00	0	perf_experiment
+06:16:47 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	475.00	0.00	671480	596844	0.23	7581.50	0.00	0.00	0	perf_experiment
+06:16:48 PM	1006	217126	98.00	1.00	0.00	0.00	99.00	19	475.00	0.00	671604	596944	0.23	7626.50	0.00	0.00	0	perf_experiment
+06:16:49 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	393.00	0.00	671724	597040	0.23	7572.50	0.00	0.00	0	perf_experiment
+06:16:50 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	347.00	0.00	671724	597104	0.23	7566.00	0.00	0.00	0	perf_experiment
+06:16:51 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	13955.00	0.00	671860	597216	0.23	7501.50	0.00	0.00	0	perf_experiment
+06:16:52 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2549.00	0.00	671988	597288	0.23	7608.50	0.00	0.00	0	perf_experiment
+06:16:53 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2234.00	0.00	671988	597388	0.23	7624.50	0.00	0.00	0	perf_experiment
+06:16:54 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	2036.00	0.00	672120	597468	0.23	7611.50	0.00	0.00	0	perf_experiment
+06:16:55 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1741.00	0.00	672248	597548	0.23	7604.50	0.00	0.00	0	perf_experiment
+06:16:56 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1682.00	0.00	672248	597636	0.23	7594.50	0.00	0.00	0	perf_experiment
+06:16:57 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1495.00	0.00	672384	597740	0.23	7548.00	0.00	0.00	0	perf_experiment
+06:16:58 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	1376.00	0.00	672516	597848	0.23	7586.00	0.00	0.00	0	perf_experiment
+06:16:59 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1143.00	0.00	672516	597904	0.23	7593.00	0.00	0.00	0	perf_experiment
+06:17:00 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1135.00	0.00	672652	598016	0.23	7552.50	0.00	0.00	0	perf_experiment
+06:17:01 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	932.00	0.00	672652	598072	0.23	7606.00	0.00	0.00	0	perf_experiment
+06:17:02 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	826.00	0.00	672788	598180	0.23	7607.50	0.00	0.00	0	perf_experiment
+06:17:03 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	785.00	0.00	672920	598268	0.23	7608.00	0.00	0.00	0	perf_experiment
+06:17:04 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	651.00	0.00	672920	598340	0.23	7572.50	0.00	0.00	0	perf_experiment
+06:17:05 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	599.00	0.00	673056	598428	0.23	7584.00	0.00	0.00	0	perf_experiment
+06:17:06 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	2723.00	0.00	673192	598544	0.23	7571.00	0.00	0.00	0	perf_experiment
+06:17:07 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	5794.00	0.00	673316	598616	0.23	7581.00	0.00	0.00	0	perf_experiment
+06:17:08 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	5228.00	0.00	673316	598720	0.23	7584.50	0.00	0.00	0	perf_experiment
+06:17:09 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	4676.00	0.00	673436	598808	0.23	7617.50	0.00	0.00	0	perf_experiment
+06:17:10 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	4252.00	0.00	673572	598896	0.23	7565.50	0.00	0.00	0	perf_experiment
+06:17:11 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3707.00	0.00	673572	598948	0.23	7572.50	0.00	0.00	0	perf_experiment
+06:17:12 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	3475.00	0.00	673696	599056	0.23	7573.00	0.00	0.00	0	perf_experiment
+06:17:13 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	3051.00	0.00	673828	599160	0.23	7593.00	0.00	0.00	0	perf_experiment
+06:17:14 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2668.00	0.00	673828	599224	0.23	7577.00	0.00	0.00	0	perf_experiment
+06:17:15 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2422.00	0.00	673956	599332	0.23	7624.50	0.00	0.00	0	perf_experiment
+06:17:16 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2223.00	0.00	674084	599424	0.23	7594.50	0.00	0.00	0	perf_experiment
+06:17:17 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1988.00	0.00	674084	599480	0.23	7577.50	0.00	0.00	0	perf_experiment
+06:17:18 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1653.00	0.00	674220	599592	0.23	7620.50	0.00	0.00	0	perf_experiment
+06:17:19 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	1551.00	0.00	674348	599700	0.23	7608.50	0.00	0.00	0	perf_experiment
+06:17:20 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	1463.00	0.00	674472	599772	0.23	7586.50	0.00	0.00	0	perf_experiment
+06:17:21 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	1253.00	0.00	674472	599860	0.23	7579.00	0.00	0.00	0	perf_experiment
+06:17:22 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	1200.00	0.00	674608	599996	0.23	7572.50	0.00	0.00	0	perf_experiment
+06:17:23 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	1043.00	0.00	674744	600060	0.23	7585.00	0.00	0.00	0	perf_experiment
+06:17:24 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	911.00	0.00	674744	600132	0.23	7612.50	0.00	0.00	0	perf_experiment
+06:17:25 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	778.00	0.00	674880	600240	0.23	7593.50	0.00	0.00	0	perf_experiment
+06:17:26 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	704.00	0.00	674880	600288	0.23	7618.00	0.00	0.00	0	perf_experiment
+06:17:27 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	659.00	0.00	675012	600400	0.23	7608.50	0.00	0.00	0	perf_experiment
+06:17:28 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	581.00	0.00	675148	600504	0.23	7572.00	0.00	0.00	0	perf_experiment
+06:17:29 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	501.00	0.00	675148	600560	0.23	7640.00	0.00	0.00	0	perf_experiment
+06:17:30 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	482.00	0.00	675284	600660	0.23	7624.00	0.00	0.00	0	perf_experiment
+06:17:31 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	445.00	0.00	675416	600732	0.23	7556.50	0.00	0.00	0	perf_experiment
+06:17:32 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	390.00	0.00	675416	600820	0.23	7589.50	0.00	0.00	0	perf_experiment
+06:17:33 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	327.00	0.00	675552	600924	0.23	7631.50	0.00	0.00	0	perf_experiment
+06:17:34 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	345.00	0.00	675680	601008	0.23	7631.00	0.00	0.00	0	perf_experiment
+06:17:35 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	258.00	0.00	675804	601104	0.23	7607.00	0.00	0.00	0	perf_experiment
+06:17:36 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	245.00	0.00	675804	601184	0.23	7613.50	0.00	0.00	0	perf_experiment
+06:17:37 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	221.00	0.00	675940	601288	0.23	7608.50	0.00	0.00	0	perf_experiment
+06:17:38 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	215.00	0.00	676076	601392	0.23	7631.50	0.00	0.00	0	perf_experiment
+06:17:39 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	194.00	0.00	676076	601428	0.23	7563.00	0.00	0.00	0	perf_experiment
+06:17:40 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	179.00	0.00	676212	601556	0.23	7622.50	0.00	0.00	0	perf_experiment
+06:17:41 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	137.00	0.00	676212	601616	0.23	7596.00	0.00	0.00	0	perf_experiment
+06:17:42 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	13013.00	0.00	676344	601732	0.23	7504.00	0.00	0.00	0	perf_experiment
+06:17:43 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2490.00	0.00	676472	601820	0.23	7590.00	0.00	0.00	0	perf_experiment
+06:17:44 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2226.00	0.00	676472	601888	0.23	7562.00	0.00	0.00	0	perf_experiment
+06:17:45 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1950.00	0.00	676604	602008	0.23	7610.00	0.00	0.00	0	perf_experiment
+06:17:46 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1626.00	0.00	676740	602116	0.23	7573.50	0.00	0.00	0	perf_experiment
+06:17:47 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1454.00	0.00	676876	602192	0.23	7579.00	0.00	0.00	0	perf_experiment
+06:17:48 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1329.00	0.00	676876	602296	0.23	7576.50	0.00	0.00	0	perf_experiment
+06:17:49 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1175.00	0.00	677012	602344	0.23	7609.00	0.00	0.00	0	perf_experiment
+06:17:50 PM	1006	217126	98.00	1.00	0.00	0.00	99.00	19	1086.00	0.00	677144	602420	0.23	7577.00	0.00	0.00	0	perf_experiment
+06:17:51 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	939.00	0.00	677144	602516	0.23	7602.50	0.00	0.00	0	perf_experiment
+06:17:52 PM	1006	217126	98.00	2.00	0.00	1.00	100.00	19	861.00	0.00	677272	602636	0.23	7616.00	0.00	0.00	0	perf_experiment
+06:17:53 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	723.00	0.00	677272	602684	0.23	7578.00	0.00	0.00	0	perf_experiment
+06:17:54 PM	1006	217126	96.00	3.00	0.00	0.00	99.00	19	679.00	0.00	677400	602772	0.23	7586.50	0.00	0.00	0	perf_experiment
+06:17:55 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	620.00	0.00	677536	602880	0.23	7583.50	0.00	0.00	0	perf_experiment
+06:17:56 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	525.00	0.00	677536	602952	0.23	7590.00	0.00	0.00	0	perf_experiment
+06:17:57 PM	1006	217126	100.00	0.00	0.00	0.00	100.00	19	511.00	0.00	677668	603040	0.23	7610.00	0.00	0.00	0	perf_experiment
+06:17:58 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	444.00	0.00	677796	603160	0.23	7597.00	0.00	0.00	0	perf_experiment
+06:17:59 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	460.00	0.00	677928	603252	0.23	7576.50	0.00	0.00	0	perf_experiment
+06:18:00 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	368.00	0.00	678060	603360	0.23	7586.00	0.00	0.00	0	perf_experiment
+06:18:01 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	338.00	0.00	678060	603428	0.23	7588.50	0.00	0.00	0	perf_experiment
+06:18:02 PM	1006	217126	97.00	4.00	0.00	0.00	101.00	19	4806.00	0.00	678184	603540	0.23	7490.50	0.00	0.00	0	perf_experiment
+06:18:03 PM	1006	217126	97.03	0.99	0.00	0.00	98.02	19	5493.07	0.00	678184	603596	0.23	7474.75	0.00	0.00	0	perf_experiment
+06:18:04 PM	1006	217126	98.00	3.00	0.00	0.00	101.00	19	5106.00	0.00	678320	603684	0.23	7586.00	0.00	0.00	0	perf_experiment
+06:18:05 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	4416.00	0.00	678440	603828	0.23	7562.50	0.00	0.00	0	perf_experiment
+06:18:06 PM	1006	217126	94.00	6.00	0.00	0.00	100.00	19	4071.00	0.00	678576	603868	0.23	7574.00	0.00	0.00	0	perf_experiment
+06:18:07 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	3487.00	0.00	678576	603960	0.23	7538.00	0.00	0.00	0	perf_experiment
+06:18:08 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	3198.00	0.00	678708	604044	0.23	7561.00	0.00	0.00	0	perf_experiment
+06:18:09 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	2875.00	0.00	678832	604144	0.23	7586.00	0.00	0.00	0	perf_experiment
+06:18:10 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	2534.00	0.00	678832	604208	0.23	7584.00	0.00	0.00	0	perf_experiment
+06:18:11 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2357.00	0.00	678964	604312	0.23	7554.00	0.00	0.00	0	perf_experiment
+06:18:12 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	2095.00	0.00	678964	604384	0.23	7558.00	0.00	0.00	0	perf_experiment
+06:18:13 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1833.00	0.00	679100	604476	0.23	7571.00	0.00	0.00	0	perf_experiment
+06:18:14 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1701.00	0.00	679224	604588	0.23	7611.50	0.00	0.00	0	perf_experiment
+06:18:15 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	1447.00	0.00	679360	604692	0.23	7577.00	0.00	0.00	0	perf_experiment
+06:18:16 PM	1006	217126	95.00	5.00	0.00	0.00	100.00	19	1347.00	0.00	679360	604732	0.23	7611.00	0.00	0.00	0	perf_experiment
+06:18:17 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	1195.00	0.00	679484	604848	0.23	7611.50	0.00	0.00	0	perf_experiment
+06:18:18 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	1045.00	0.00	679484	604904	0.23	7584.00	0.00	0.00	0	perf_experiment
+06:18:19 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	875.00	0.00	679620	605024	0.23	7580.50	0.00	0.00	0	perf_experiment
+06:18:20 PM	1006	217126	96.00	4.00	0.00	0.00	100.00	19	865.00	0.00	679756	605136	0.23	7646.00	0.00	0.00	0	perf_experiment
+06:18:21 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	730.00	0.00	679756	605176	0.23	7572.50	0.00	0.00	0	perf_experiment
+06:18:22 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	725.00	0.00	679884	605284	0.23	7618.50	0.00	0.00	0	perf_experiment
+06:18:23 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	629.00	0.00	680020	605356	0.23	7624.00	0.00	0.00	0	perf_experiment
+06:18:24 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	542.00	0.00	680020	605436	0.23	7602.00	0.00	0.00	0	perf_experiment
+06:18:25 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	468.00	0.00	680152	605540	0.23	7598.50	0.00	0.00	0	perf_experiment
+06:18:26 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	475.00	0.00	680288	605644	0.23	7583.50	0.00	0.00	0	perf_experiment
+06:18:27 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	376.00	0.00	680424	605728	0.23	7628.50	0.00	0.00	0	perf_experiment
+06:18:28 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	340.00	0.00	680424	605812	0.23	7613.50	0.00	0.00	0	perf_experiment
+06:18:29 PM	1006	217126	99.00	1.00	0.00	0.00	100.00	19	355.00	0.00	680560	605892	0.23	7606.50	0.00	0.00	0	perf_experiment
+06:18:30 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	286.00	0.00	680696	605964	0.23	7595.50	0.00	0.00	0	perf_experiment
+06:18:31 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	276.00	0.00	680696	606064	0.23	7628.50	0.00	0.00	0	perf_experiment
+06:18:32 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	256.00	0.00	680812	606160	0.23	7623.50	0.00	0.00	0	perf_experiment
+06:18:33 PM	1006	217126	98.00	2.00	0.00	0.00	100.00	19	227.00	0.00	680944	606252	0.23	7570.00	0.00	0.00	0	perf_experiment
+06:18:34 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	178.00	0.00	680944	606332	0.23	7644.00	0.00	0.00	0	perf_experiment
+06:18:35 PM	1006	217126	99.00	2.00	0.00	0.00	101.00	19	184.00	0.00	681080	606460	0.23	7601.50	0.00	0.00	0	perf_experiment
+06:18:36 PM	1006	217126	97.00	2.00	0.00	0.00	99.00	19	160.00	0.00	681080	606496	0.23	7618.50	0.00	0.00	0	perf_experiment
+06:18:37 PM	1006	217126	97.00	3.00	0.00	0.00	100.00	19	183.00	0.00	681212	606624	0.23	7580.50	0.00	0.00	0	perf_experiment
+06:18:38 PM	1006	217126	96.00	5.00	0.00	0.00	101.00	19	143.00	0.00	681344	606704	0.23	7622.50	0.00	0.00	0	perf_experiment
