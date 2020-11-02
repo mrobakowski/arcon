@@ -1,0 +1,25 @@
+experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)
+1,8,32,-1,220194,7451,98932
+1,32,128,-1,324163,9964,121692
+1,128,512,-1,316991,12370,200837
+1,512,2048,-1,290511,25512,270145
+experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)
+2,8,32,639,1230,8626,2706
+2,32,128,-1,2579,20442,3282
+2,128,512,-1,7699,24440,5727
+2,512,2048,-1,29819,46973,16360
+experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)
+3,8,32,330,1227,6287,1308
+3,32,128,536,1466,19496,2089
+3,128,512,1356,6518,24421,4789
+3,512,2048,4690,26726,48021,16545
+experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)
+4,8,32,441,6185,6786,19338
+4,32,128,728,14179,19063,20454
+4,128,512,1781,38891,25261,22388
+4,512,2048,6099,119746,50281,23574
+experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)
+5,8,32,319,1273,9519,18101
+5,32,128,543,1593,16644,18859
+5,128,512,1402,6011,20961,20671
+5,512,2048,4923,22159,45720,22371

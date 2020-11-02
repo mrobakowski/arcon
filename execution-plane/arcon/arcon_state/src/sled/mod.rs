@@ -69,7 +69,7 @@ impl Backend for Sled {
         let mut opts = sled::Config::new().path(live_path);
         opts = opts.mode(sled::Mode::HighThroughput);
         if let Some(mem_size) = storage_config.mem_size_hint {
-            opts = opts.cache_capacity(mem_size)
+            opts = opts.cache_capacity(mem_size / 5) // NOTE: cache_capacity is messed up for small values https://github.com/spacejam/sled/issues/986#issuecomment-592950100
         }
         let db = opts.open()?;
         Ok(BackendContainer::new(Sled {
@@ -90,7 +90,7 @@ impl Backend for Sled {
         let mut opts = sled::Config::new().path(live_path);
         opts = opts.mode(sled::Mode::HighThroughput);
         if let Some(mem_size) = storage_config.mem_size_hint {
-            opts = opts.cache_capacity(mem_size)
+            opts = opts.cache_capacity(mem_size / 5) // NOTE: cache_capacity is messed up for small values https://github.com/spacejam/sled/issues/986#issuecomment-592950100
         }
         let db = opts.open()?;
         #[allow(unused_assignments, unused_mut)]

@@ -1,0 +1,186 @@
+5,Faster,10,N/A,2500000,32,128,18859,3181501
+
+
+resource usage stats
+
+Linux 5.4.0-52-generic (LT36716) 	11/02/20 	_x86_64_	(12 CPU)
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:01     1000     92980   77.00   21.00    0.00    0.00   98.00     6 145468.00      0.00  661476  586232   1.80      0.00      4.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:02     1000     92980   64.00   15.00    0.00    0.00   79.00     6    758.00      0.00  664512  589448   1.81      0.00  65536.00      0.00      22  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:03     1000     92980   49.00    8.00    0.00    0.00   57.00     0    447.00      0.00  666228  591032   1.82      8.00 131072.00      0.00      43  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:04     1000     92980   54.00    6.00    0.00    0.00   60.00     0    436.00      0.00  667944  592880   1.82      8.00  98304.00      0.00      40  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:05     1000     92980   44.00   28.00    0.00    0.00   72.00     6    361.00      0.00  669396  594200   1.83   3490.50  65536.00      0.00      27  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:06     1000     92980   25.00   75.00    0.00    0.00  100.00     6      2.00      0.00  669396  594200   1.83  11951.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:07     1000     92980   35.00   65.00    0.00    0.00  100.00     6     15.00      0.00  669508  594480   1.83  12016.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:08     1000     92980   30.00   70.00    0.00    0.00  100.00     6     20.00      0.00  669508  594480   1.83  12085.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:09     1000     92980   32.00   68.00    0.00    0.00  100.00     6     16.00      0.00  669612  594592   1.83  12018.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:10     1000     92980   29.00   71.00    0.00    0.00  100.00     6     12.00      0.00  669716  594696   1.83  11944.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:11     1000     92980   27.00   73.00    0.00    0.00  100.00     6     18.00      0.00  669716  594696   1.83  12061.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:12     1000     92980   36.00   64.00    0.00    0.00  100.00     6     17.00      0.00  669832  594804   1.83  12061.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:13     1000     92980   28.00   59.00    0.00    0.00   87.00     8     12.00      0.00  669832  594804   1.83  10263.00  32768.00      0.00      13  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:14     1000     92980   33.00   67.00    0.00    0.00  100.00     8     23.00      0.00  669956  594912   1.83  12155.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:15     1000     92980   34.00   66.00    0.00    0.00  100.00     8     16.00      0.00  670052  595040   1.83  12003.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:16     1000     92980   34.00   66.00    0.00    0.00  100.00     8     14.00      0.00  670052  595040   1.83  11985.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:17     1000     92980   30.00   71.00    0.00    0.00  101.00     8     14.00      0.00  670164  595136   1.83  12032.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:18     1000     92980   31.00   69.00    0.00    0.00  100.00     8     14.00      0.00  670164  595136   1.83  12136.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:19     1000     92980   31.00   68.00    0.00    0.00   99.00     8     21.00      0.00  670280  595244   1.83  11943.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:20     1000     92980   31.00   70.00    0.00    0.00  101.00     2     20.00      0.00  670384  595364   1.83  12199.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:21     1000     92980   34.00   66.00    0.00    0.00  100.00     2     18.00      0.00  670384  595364   1.83  12031.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:22     1000     92980   30.00   70.00    0.00    0.00  100.00     2      8.00      0.00  670492  595364   1.83  12000.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:23     1000     92980   31.00   68.00    0.00    0.00   99.00     2     19.00      0.00  670492  595364   1.83  12103.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:24     1000     92980   29.00   55.00    0.00    0.00   84.00     8     14.00      0.00  670620  595576   1.83  10031.50  32768.00      0.00      16  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:25     1000     92980   29.00   71.00    0.00    0.00  100.00     8     12.00      0.00  670620  595576   1.83  11847.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:26     1000     92980   32.00   69.00    0.00    0.00  101.00     8     22.00      0.00  670736  595704   1.83  12083.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:27     1000     92980   30.00   70.00    0.00    0.00  100.00     8      9.00      0.00  670736  595704   1.83  12050.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:28     1000     92980   32.00   67.00    0.00    0.00   99.00     8     20.00      0.00  670840  595820   1.83  12117.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:29     1000     92980   37.00   64.00    0.00    0.00  101.00     8     12.00      0.00  670840  595820   1.83  12074.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:30     1000     92980   31.00   68.00    0.00    0.00   99.00     8     21.00      0.00  670952  595932   1.83  11814.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:31     1000     92980   34.00   66.00    0.00    0.00  100.00     8     22.00      0.00  671076  596032   1.83  12220.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:32     1000     92980   36.00   64.00    0.00    0.00  100.00     8     12.00      0.00  671076  596032   1.83  11942.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:33     1000     92980   29.00   71.00    0.00    0.00  100.00     8     16.00      0.00  671188  596160   1.83  12215.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:34     1000     92980   27.00   64.00    0.00    0.00   91.00     9     19.00      0.00  671272  596268   1.83  10664.50  32768.00      0.00      10  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:35     1000     92980   29.00   71.00    0.00    0.00  100.00     9     11.00      0.00  671272  596268   1.83  12130.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:36     1000     92980   32.00   68.00    0.00    0.00  100.00     9     15.00      0.00  671376  596356   1.83  12106.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:37     1000     92980   31.00   69.00    0.00    0.00  100.00     9     14.00      0.00  671376  596356   1.83  12103.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:38     1000     92980   31.00   68.00    0.00    0.00   99.00     9     21.00      0.00  671484  596456   1.83  11953.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:39     1000     92980   34.00   66.00    0.00    0.00  100.00     9     10.00      0.00  671484  596456   1.83  11943.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:40     1000     92980   33.00   67.00    0.00    0.00  100.00     9     19.00      0.00  671600  596572   1.83  12135.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:41     1000     92980   36.00   65.00    0.00    0.00  101.00     9     18.00      0.00  671704  596684   1.84  12104.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:42     1000     92980   33.00   66.00    0.00    0.00   99.00     3     13.00      0.00  671704  596684   1.84  11931.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:43     1000     92980   38.00   63.00    0.00    0.00  101.00     3     18.00      0.00  671812  596784   1.84  12139.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:44     1000     92980   29.00   71.00    0.00    0.00  100.00     3     15.00      0.00  671812  596784   1.84  12065.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:45     1000     92980   27.00   62.00    0.00    0.00   89.00     3     16.00      0.00  671912  596892   1.84  10722.50  32768.00      0.00      10  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:46     1000     92980   32.00   68.00    0.00    0.00  100.00     3     19.00      0.00  672016  596996   1.84  11900.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:47     1000     92980   36.00   64.00    0.00    0.00  100.00     3     12.00      0.00  672016  596996   1.84  12011.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:48     1000     92980   30.00   70.00    0.00    0.00  100.00     3     16.00      0.00  672116  597096   1.84  12139.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:49     1000     92980   32.00   68.00    0.00    0.00  100.00     3     13.00      0.00  672116  597096   1.84  12000.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:50     1000     92980   36.00   64.00    0.00    0.00  100.00     3     24.00      0.00  672240  597196   1.84  12005.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:51     1000     92980   32.00   68.00    0.00    0.00  100.00     3     13.00      0.00  672356  597328   1.84  12124.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:52     1000     92980   36.00   64.00    0.00    0.00  100.00     3     16.00      0.00  672356  597328   1.84  11993.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:53     1000     92980   30.00   70.00    0.00    0.00  100.00     3     18.00      0.00  672460  597440   1.84  12110.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:54     1000     92980   37.00   63.00    0.00    0.00  100.00     3     15.00      0.00  672460  597440   1.84  11900.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:55     1000     92980   33.00   67.00    0.00    0.00  100.00     3     20.00      0.00  672560  597440   1.84  12065.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:56     1000     92980   31.00   60.00    0.00    0.00   91.00     3     16.00      0.00  672672  597652   1.84  10862.00  32768.00      0.00       9  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:57     1000     92980   25.00   75.00    0.00    0.00  100.00     3     11.00      0.00  672672  597652   1.84  11945.00      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:58     1000     92980   29.00   71.00    0.00    0.00  100.00     3     18.00      0.00  672772  597752   1.84  12099.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:37:59     1000     92980   35.00   65.00    0.00    0.00  100.00     3     12.00      0.00  672772  597752   1.84  12111.50      0.00      0.00       0  resource_usage_
+
+# Time        UID       PID    %usr %system  %guest   %wait    %CPU   CPU  minflt/s  majflt/s     VSZ     RSS   %MEM   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+22:38:00     1000     92980   31.00   68.00    0.00    0.00   99.00     3     25.00      0.00  672880  597852   1.84  11950.50      0.00      0.00       0  resource_usage_
