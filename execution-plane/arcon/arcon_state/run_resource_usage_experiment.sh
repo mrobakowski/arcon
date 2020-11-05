@@ -12,19 +12,22 @@ EXPERIMENT_RESULTS="res_usage/experiment_results.csv"
 EXPERIMENT_OPS="res_usage/experiment_results_ops.csv"
 
 mkdir res_usage
-rm $EXPERIMENT_RESULTS
-rm $EXPERIMENT_OPS
-rm res_usage/raw_results_*
+#rm $EXPERIMENT_RESULTS
+#rm $EXPERIMENT_OPS
+#rm res_usage/raw_results_*
 
-for experiment in 1 2 3 4 5; do
+for experiment in 1 # 2 3 4 5
+do
   echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>$EXPERIMENT_RESULTS
   echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>$EXPERIMENT_OPS
-  for size_mul in 1 4 16 64; do
+  for size_mul in 1 # 4 16 64
+  do
     export KEY_SIZE=$((8 * size_mul))
     export VALUE_SIZE=$((32 * size_mul))
     echo -n "$experiment,$KEY_SIZE,$VALUE_SIZE" >>$EXPERIMENT_RESULTS
     echo -n "$experiment,$KEY_SIZE,$VALUE_SIZE" >>$EXPERIMENT_OPS
-    for backend in InMemory Rocks Sled Faster; do
+    for backend in Sled #InMemory Rocks Sled Faster
+    do
       export OUT_FILE="STDOUT"
 
       echo -n "," >>$EXPERIMENT_RESULTS
@@ -35,7 +38,7 @@ for experiment in 1 2 3 4 5; do
 
       echo "session reset = $SESSION_LENGTH, key size = $KEY_SIZE, value size = $VALUE_SIZE"
 
-      export OUT_FILE="res_usage/raw_results_${experiment}_${KEY_SIZE}_${VALUE_SIZE}_${backend}"
+      export OUT_FILE="res_usage/raw_results_${experiment}_${KEY_SIZE}_${VALUE_SIZE}_${backend}_long"
 
       res=$(pidstat -druh 1 -e nocache $run $experiment $backend)
       if [ $? -eq 0 ]; then

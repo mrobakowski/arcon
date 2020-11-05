@@ -393,7 +393,7 @@ fn reset_timeout() {
     TIMED_OUT.store(false, Ordering::Relaxed);
 
     thread::spawn(|| {
-        thread::sleep(Duration::from_secs(60));
+        thread::sleep(Duration::from_secs(3 * 60 * 60));
         TIMED_OUT.store(true, Ordering::Relaxed);
     });
 }
