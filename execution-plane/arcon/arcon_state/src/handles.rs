@@ -349,6 +349,13 @@ impl<B: Backend, K: Key, V: Value, IK: Metakey, N: Metakey>
     }
 }
 
+#[cfg(feature = "fill_up")]
+impl<B: Backend> ActiveHandle<'_, '_, B, MapState<Vec<u8>, Vec<u8>>, (), ()> {
+    pub fn fill_up(&mut self, num_bytes: usize, key_size: usize, value_size: usize) -> Result<()> {
+        self.backend.fill_up(self.inner, num_bytes, key_size, value_size)
+    }
+}
+
 impl<B: Backend, T: Value, IK: Metakey, N: Metakey> ActiveHandle<'_, '_, B, VecState<T>, IK, N> {
     pub fn clear(&mut self) -> Result<()> {
         self.backend.vec_clear(self.inner)

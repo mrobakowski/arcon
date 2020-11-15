@@ -4,6 +4,7 @@ use crate::{
     error::*, handles::BoxedIteratorOfResult, Aggregator, AggregatorState, Handle, Key, MapState,
     Metakey, Reducer, ReducerState, Value, ValueState, VecState,
 };
+use std::convert::TryInto;
 
 pub trait ValueOps {
     fn value_clear<T: Value, IK: Metakey, N: Metakey>(
@@ -30,6 +31,48 @@ pub trait ValueOps {
 }
 
 pub trait MapOps {
+    #[cfg(feature = "fill_up")]
+    fn fill_up(&mut self, handle: &Handle<MapState<Vec<u8>, Vec<u8>>>, num_bytes: usize, key_size: usize, value_size: usize) -> Result<()> {
+        let rnd = fastrand::Rng::new();
+        const MAX_BYTES_ONE_INSERT: i64 = 2 * 1024 * 1024;
+        let record_size = (key_size + value_size) as i64;
+        let serialized_record_size = {
+            let mut key = Vec::new();
+            let mut value = Vec::new();
+            key.resize_with(key_size, || rnd.u8(..));
+            value.resize_with(value_size, || rnd.u8(..));
+
+            let serialized_key = handle.serialize_metakeys_and_key(&key)?;
+            let serialized_value = crate::serialization::protobuf::serialize(&value)?;
+
+            (serialized_key.len() + serialized_value.len()) as i64
+        };
+        let mut left: i64 = num_bytes.try_into().unwrap();
+
+        while left > 0 {
+            let this_batch = i64::min(left, MAX_BYTES_ONE_INSERT);
+            let num_records = (this_batch / serialized_record_size) + 1;
+            let bytes_in_this_batch = num_records * serialized_record_size;
+
+            let mut records = Vec::new();
+            records.resize_with(num_records as usize, || {
+                let mut key = Vec::new();
+                let mut value = Vec::new();
+                key.resize_with(key_size, || rnd.u8(..));
+                value.resize_with(key_size, || rnd.u8(..));
+                (key, value)
+            });
+
+            self.map_insert_all(handle, records)?;
+
+            eprintln!("bytes in this batch: {}, left: {}", bytes_in_this_batch, left);
+
+            left -= bytes_in_this_batch;
+        }
+
+        Ok(())
+    }
+
     fn map_clear<K: Key, V: Value, IK: Metakey, N: Metakey>(
         &mut self,
         handle: &Handle<MapState<K, V>, IK, N>,

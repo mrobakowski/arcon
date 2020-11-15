@@ -92,6 +92,7 @@ env_var!(KEY_SIZE: usize = 8);
 env_var!(VALUE_SIZE: usize = 32);
 // 352 megabytes is the minimum size that FASTER doesn't hang up on
 env_var!(MEM_SIZE_HINT_MB: u64 = 352);
+env_var!(TIMEOUT_SECS: u64 = 600);
 env_var!(OUT_FILE: PathBuf = STDOUT);
 
 fn main() -> Result<(), Box<dyn Error>> {
@@ -197,8 +198,11 @@ fn random_read(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) ->
             let mut state = state.activate(&mut session);
             let mut values = state.values();
             reset_timeout();
+            // values.fill_up(1024 * 1024 * 1024, 8, 32)?;
+            // std::mem::forget(dir);
+            // return Ok(());
 
-            // write as many keys as possible in 60 seconds
+            // write as many keys as possible within the timeout
             loop {
                 let value: Vec<_> = make_value(value_size, &rng);
                 let key: Vec<_> = make_key(num_entries, key_size);
@@ -206,6 +210,9 @@ fn random_read(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) ->
                 num_entries += 1;
 
                 if check_timeout() {
+                    eprintln!("written entries: {}, estimated size: {}MB (+ serialization overhead)",
+                        num_entries, (num_entries * (key_size + value_size) as u128) / (1024 * 1024));
+                    eprintln!("size on disk: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
                     break;
                 }
             }
@@ -220,6 +227,8 @@ fn random_read(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) ->
             Ok(())
         })?
     });
+
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
 
     Ok(())
 }
@@ -254,6 +263,8 @@ fn append_write(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -
             Ok(())
         })?
     });
+
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
 
     Ok(())
 }
@@ -292,6 +303,8 @@ fn overwrite(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> R
             Ok(())
         })?
     });
+
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
 
     Ok(())
 }
@@ -342,6 +355,8 @@ fn naive_rmw(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> R
         })?
     });
 
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
+
     Ok(())
 }
 
@@ -381,6 +396,8 @@ fn specialized_rmw(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>
         })?
     });
 
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
+
     Ok(())
 }
 
@@ -393,7 +410,7 @@ fn reset_timeout() {
     TIMED_OUT.store(false, Ordering::Relaxed);
 
     thread::spawn(|| {
-        thread::sleep(Duration::from_secs(60));
+        thread::sleep(Duration::from_secs(*TIMEOUT_SECS));
         TIMED_OUT.store(true, Ordering::Relaxed);
     });
 }

@@ -1,0 +1,102 @@
+warning: the feature `const_generics` is incomplete and may cause the compiler to crash
+ --> arcon/arcon_state/src/lib.rs:4:12
+  |
+4 | #![feature(const_generics)]
+  |            ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(incomplete_features)]` on by default
+
+warning: unused variable: `record_size`
+  --> arcon/arcon_state/src/ops.rs:38:13
+   |
+38 |         let record_size = (key_size + value_size) as i64;
+   |             ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_record_size`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: 2 warnings emitted
+
+   Compiling arcon_state v0.1.1 (/home/mrobakowski/CLionProjects/arcon/execution-plane/arcon/arcon_state)
+    Finished release [optimized + debuginfo] target(s) in 7.03s
+mkdir: cannot create directory ‘res_usage’: File exists
+session reset = 10, key size = 8, value size = 32
+Running bench #1 with Rocks
+written entries: 83214236, estimated size: 3174MB (+ serialization overhead)
+size on disk: 3356MB
+Measurement started... Timed out after 768520 ops!
+Done! 120.000337227s
+size on disk after the measurement: 3104MB
+session reset = 10, key size = 8, value size = 32
+Running bench #1 with Sled
+written entries: 10125220, estimated size: 386MB (+ serialization overhead)
+size on disk: 2241MB
+Measurement started... Timed out after 12260791 ops!
+Done! 120.000230607s
+size on disk after the measurement: 2244MB
+session reset = 10, key size = 8, value size = 32
+Running bench #1 with Faster
+written entries: 32860702, estimated size: 1253MB (+ serialization overhead)
+size on disk: 4224MB
+Measurement started... Timed out after 1053365 ops!
+Done! 120.000194258s
+size on disk after the measurement: 4224MB
+session reset = 10, key size = 8, value size = 32
+Running bench #2 with Rocks
+Measurement started... Timed out after 80843484 ops!
+Done! 120.00012229s
+size on disk after the measurement: 3215MB
+session reset = 10, key size = 8, value size = 32
+Running bench #2 with Sled
+Measurement started... Timed out after 9392834 ops!
+Done! 120.000161771s
+size on disk after the measurement: 2070MB
+session reset = 10, key size = 8, value size = 32
+Running bench #2 with Faster
+Measurement started... Timed out after 30771772 ops!
+Done! 120.000190627s
+size on disk after the measurement: 4160MB
+session reset = 10, key size = 8, value size = 32
+Running bench #3 with Rocks
+Measurement started... Timed out after 90794531 ops!
+Done! 120.000136965s
+size on disk after the measurement: 223MB
+session reset = 10, key size = 8, value size = 32
+Running bench #3 with Sled
+Measurement started... Timed out after 16341539 ops!
+Done! 120.000210833s
+size on disk after the measurement: 576MB
+session reset = 10, key size = 8, value size = 32
+Running bench #3 with Faster
+Measurement started... Timed out after 91233237 ops!
+Done! 120.00018053s
+size on disk after the measurement: 12928MB
+session reset = 10, key size = 8, value size = 32
+Running bench #4 with Rocks
+Measurement started... Timed out after 15477073 ops!
+Done! 120.000366873s
+size on disk after the measurement: 105MB
+session reset = 10, key size = 8, value size = 32
+Running bench #4 with Sled
+Measurement started... Timed out after 15532031 ops!
+Done! 120.000226569s
+size on disk after the measurement: 591MB
+session reset = 10, key size = 8, value size = 32
+Running bench #4 with Faster
+Measurement started... Timed out after 4057499 ops!
+Done! 120.00022116s
+size on disk after the measurement: 288MB
+session reset = 10, key size = 8, value size = 32
+Running bench #5 with Rocks
+Measurement started... Timed out after 94259540 ops!
+Done! 120.000153189s
+size on disk after the measurement: 286MB
+session reset = 10, key size = 8, value size = 32
+Running bench #5 with Sled
+Measurement started... Timed out after 10725851 ops!
+Done! 120.000204912s
+size on disk after the measurement: 624MB
+session reset = 10, key size = 8, value size = 32
+Running bench #5 with Faster
+Measurement started... Timed out after 5234791 ops!
+Done! 120.000291513s
+size on disk after the measurement: 480MB

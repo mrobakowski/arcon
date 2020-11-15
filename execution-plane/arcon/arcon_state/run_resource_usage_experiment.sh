@@ -2,11 +2,12 @@
 cd "${0%/*}" || exit 1
 
 run="../../target/release/examples/resource_usage_experiment"
-cargo build --example resource_usage_experiment --features=sled,rocks,faster --release
+cargo build --example resource_usage_experiment --features=sled,rocks,faster,fill_up --release || exit 1
 
 export SESSION_LENGTH=10
 # used only in a few experiments with limited number of keys
 export NUM_KEYS=2500000
+export TIMEOUT_SECS=120
 
 EXPERIMENT_RESULTS="res_usage/experiment_results.csv"
 EXPERIMENT_OPS="res_usage/experiment_results_ops.csv"
@@ -17,14 +18,16 @@ rm $EXPERIMENT_OPS
 rm res_usage/raw_results_*
 
 for experiment in 1 2 3 4 5; do
-  echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>$EXPERIMENT_RESULTS
-  echo "experiment,key_size,value_size,InMemory,Rocks,Sled,Faster (1),Faster (3),Faster (10),Faster (100)" >>$EXPERIMENT_OPS
-  for size_mul in 1 4 16 64; do
+  echo "experiment,key_size,value_size,Rocks,Sled,Faster (10)" >>$EXPERIMENT_RESULTS
+  echo "experiment,key_size,value_size,Rocks,Sled,Faster (10)" >>$EXPERIMENT_OPS
+  for size_mul in 1 # 4 16 64
+  do
     export KEY_SIZE=$((8 * size_mul))
     export VALUE_SIZE=$((32 * size_mul))
     echo -n "$experiment,$KEY_SIZE,$VALUE_SIZE" >>$EXPERIMENT_RESULTS
     echo -n "$experiment,$KEY_SIZE,$VALUE_SIZE" >>$EXPERIMENT_OPS
-    for backend in InMemory Rocks Sled Faster; do
+    for backend in Rocks Sled Faster # InMemory
+    do
       export OUT_FILE="STDOUT"
 
       echo -n "," >>$EXPERIMENT_RESULTS
