@@ -100,3 +100,19 @@ Running bench #5 with Faster
 Measurement started... Timed out after 5234791 ops!
 Done! 120.000291513s
 size on disk after the measurement: 480MB
+
+session reset = 10, key size = 8, value size = 32
+Running bench #33 with Rocks
+Measurement started... Timed out after 74550060 ops!
+Done! 120.000207684s
+size on disk after the measurement: 174MB
+session reset = 10, key size = 8, value size = 32
+Running bench #33 with Sled
+Measurement started... Timed out after 11029269 ops!
+Done! 120.000177015s
+size on disk after the measurement: 523MB
+session reset = 10, key size = 8, value size = 32
+Running bench #33 with Faster
+Measurement started... Timed out after 105344002 ops!
+Done! 120.000183955s
+size on disk after the measurement: 2304MB

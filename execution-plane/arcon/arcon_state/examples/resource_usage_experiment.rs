@@ -141,13 +141,15 @@ fn main() -> Result<(), Box<dyn Error>> {
         3 => overwrite(backend, rng, out),
         4 => naive_rmw(backend, rng, out),
         5 => specialized_rmw(backend, rng, out),
+        33 => overwrite_random(backend, rng, out),
         x => {
             eprintln!("unknown bench num: {}", x);
             eprintln!(
                 "\
                 1. read random values from map state\n\
                 2. blind append-only writes\n\
-                3. blind overwrites\n\
+                3. blind overwrites (random)\n\
+                33. blind overwrites (sequential)\n\
                 4. read-modify-write ex. on a map state\n\
                 5. native read-modify-write (aggregate / reduce)\
                 "
@@ -299,6 +301,44 @@ fn overwrite(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> R
             key_idx += 1;
             // reset the key idx every so often to overwrite the old values
             key_idx %= num_keys;
+
+            Ok(())
+        })?
+    });
+
+    eprintln!("size on disk after the measurement: {}MB", fs_extra::dir::get_size(&dir)? / (1024 * 1024));
+
+    Ok(())
+}
+
+fn overwrite_random(backend: BackendType, rng: fastrand::Rng, out: Box<dyn Write>) -> Result<(), Box<dyn Error>> {
+    let dir = tempdir_in(std::env::current_dir()?)?;
+    with_backend_type!(backend, |B| {
+        let backend = B::create(dir.as_ref(), &storage_config())?;
+        let mut state = PerfBundle {
+            values: Handle::map("perf-bundle-map-append"),
+        };
+
+        // init
+        {
+            let mut session = backend.session();
+            let mut rtok = unsafe { RegistrationToken::new(&mut session) };
+            state.register_states(&mut rtok);
+        }
+        // init done
+
+        let num_keys = *NUM_KEYS;
+        let value_size = *VALUE_SIZE;
+        let key_size = *KEY_SIZE;
+
+        let mut key_seed = rng.u128(0..num_keys);
+        measure(backend, out, |session| {
+            let mut state = state.activate(session);
+            let mut values = state.values();
+            let key = make_key(key_seed, key_size);
+            let value = make_value(value_size, &rng);
+            values.fast_insert(key, value)?;
+            key_seed = rng.u128(0..num_keys);
 
             Ok(())
         })?

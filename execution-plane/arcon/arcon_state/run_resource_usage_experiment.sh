@@ -13,11 +13,12 @@ EXPERIMENT_RESULTS="res_usage/experiment_results.csv"
 EXPERIMENT_OPS="res_usage/experiment_results_ops.csv"
 
 mkdir res_usage
-rm $EXPERIMENT_RESULTS
-rm $EXPERIMENT_OPS
-rm res_usage/raw_results_*
+#rm $EXPERIMENT_RESULTS
+#rm $EXPERIMENT_OPS
+#rm res_usage/raw_results_*
 
-for experiment in 1 2 3 4 5; do
+for experiment in 33 #1 2 3 4 5
+do
   echo "experiment,key_size,value_size,Rocks,Sled,Faster (10)" >>$EXPERIMENT_RESULTS
   echo "experiment,key_size,value_size,Rocks,Sled,Faster (10)" >>$EXPERIMENT_OPS
   for size_mul in 1 # 4 16 64

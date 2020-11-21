@@ -8,3 +8,5 @@ experiment,key_size,value_size,Rocks,Sled,Faster (10)
 4,8,32,15477073,15532031,4057499
 experiment,key_size,value_size,Rocks,Sled,Faster (10)
 5,8,32,94259540,10725851,5234791
+experiment,key_size,value_size,Rocks,Sled,Faster (10)
+33,8,32,74550060,11029269,105344002
